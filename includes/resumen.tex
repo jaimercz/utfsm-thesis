@@ -1,0 +1,33 @@
+%!TEX root = memoria.tex
+
+Plantilla \LaTeX{} para las Memorias y Tesis del Departamento de Industrias, UTFSM.
+
+Se incluyen también algunos ejemplos de cómo incorporar tablas y gráficos en distintas presentaciones respetando las Normas de Biblioteca para Memorias y Tesis de la UTFSM.
+
+Guía (resumida) para el uso de esta plantilla: Abra \inlinecode{/latex/memoria.tex}, cambie los parámetros de la portada y compile. Si hay errores, verifique que todos los paquetes (\LaTeX{}) han sido instalados. Vuelva a compilar. Si tiene problemas, vea los Capítulos 2 y 3 de este documento.
+
+\vspace{30mm}
+
+\paragraph{Palabras Clave.}
+\LaTeX{}, Plantilla para Memoria, Departamento de Industrias, USM.
+
+\vspace{20mm}
+
+
+\paragraph{Instrucciones para la Plantilla.}
+
+Editar el archivo \inlinecode{/latex/resumen.tex} para modificar los contenidos de esta sección.
+
+Si no desea incluir un resumen ejecutivo, editar el archivo \inlinecode{/latex/memoria.tex}, y comentar o borrar la sección que se muestra a continuación.
+
+\begin{Verbatim}[frame=lines, label=\inlinecode{/latex/memoria.tex} (extracto)
+				, fontsize=\footnotesize
+				, baselinestretch=1
+				, formatcom=\color{gray}]
+%---------------------------------------------------------------------------
+%%% RESUMEN EJECUTIVO
+\section*{RESUMEN EJECUTIVO}
+\input{resumen}		% Archivo resumen.tex
+\newpage
+%---------------------------------------------------------------------------
+\end{Verbatim}
