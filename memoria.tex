@@ -1,0 +1,254 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Plantilla para Memorias y Tesis, UTFSM, Chile
+%	=============================================
+%
+%	AUTOR:
+%		Jaime C. Rubin-de-Celis <jaime@rubin-de-celis.com>
+%
+%	FECHA:	
+%   $Date: 2016-05-28 11:05:52 -0400 (Sat, 28 May 2016) $
+%
+%	VERSIÓN:
+%   2.1
+%
+%	LICENCIA:
+% 	Copyright (c) 2012-2016, Jaime C. Rubin-de-Celis
+%   Licensed under the Educational Community License version 1.0 (SE ADJUNTA)
+%   NOTA: Las imágenes son propiedad intelectual de la UTFSM.
+%
+%	USO:
+%   Ver archivo adjunto README.md.
+%   Si todo lo demás falla, recuerde "RFM".
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%---------------------------------------------------------------------------
+%%% DOCUMENT CLASS
+\documentclass[
+	11pt,
+	letterpaper,
+	twoside
+]{book}
+%---------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------
+%%% LANGUAGE: Spanish
+\usepackage[spanish,es-tabla]{babel}
+\addto\shorthandsspanish{\spanishdeactivate{~<>}}
+%---------------------------------------------------------------------------
+
+%---------------------------------------------------------------------------
+%%% STANDARD USM THESIS STYLE
+\usepackage{thesis_utfsm}       % Configuración básica de la plantilla.
+%---------------------------------------------------------------------------
+
+%---------------------------------------------------------------------------
+%%% ENCODING
+% Este documento está escrito usando caracteres Unicode (UTF8)
+% Por lo que la siguiente línea es necesaria para reconocer los acentos
+% y otros caracteres en español.
+% Si ve caracteres extraños en el PDF (en Windows o MAC) pruebe 
+% eliminando/comentando las siguientes líneas:
+\usepackage[utf8x]{inputenc}
+
+%%% MICROTYPE: Subliminal refinements
+\usepackage{microtype}
+% ATENCIÓN: Algunos usuarios de Windows(!) pueden presentar problemas para
+% compilar su documento usando 'microtype'. Comentar o eliminar esta línea
+% sólo si experimenta problemas. Su uso para mejorar la diagramación 
+% automática es recomendable pero no imprescidible.
+%---------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------
+%%% <<<<<<<<<< CONFIGURACIÓN >>>>>>>>>>>>>
+%	Cambie los siguientes campos según sea necesario:
+\newcommand{\TheTitle}           {TÍTULO DE MEMORIA (EL TÍTULO SÓLO PUEDE TENER UN MÁXIMO DE 3 LÍNEAS)}
+\newcommand{\TheAuthor}          {NOMBRES Y APELLIDOS DEL (DE LA) AUTOR(A)}
+\newcommand{\TheGrade}           {INGENIERO/A CIVIL INDUSTRIAL} % Elegir "O" ó "A"
+\newcommand{\TheAdvisor}         {SRA. XXXXXXX XXXXXXXX X.}
+\newcommand{\TheCoAdvisor}       {SR. XXXXXXX XXXXXXXX X.}
+%\newcommand{\TheScndCoAdvisor}   {SRTA. XXXXXXX XXXXXXXX X.} % Opcional
+\newcommand{\TheCity}            {SANTIAGO}
+\newcommand{\TheDate}            {MAYO 2016}
+
+%%% >>>>>>>>>>>>> CONFIGURACIÓN <<<<<<<<<< 
+%---------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------
+%%% TABLA DE CONTENIDOS (TDC)
+
+% Control del nivel de profundidad de la Tabla de Contenidos (TDC).
+\setcounter{tocdepth}{3}        % {3} => incluirá subsubseccions en la TDC. 
+
+% Control de la numeración de secciones, subsecciones y subsubsecciones
+\setcounter{secnumdepth}{3}     % {3} => numerará las subsubsecciones.
+
+\setlength{\parindent}{30pt}    % Tamaño de la sangría francesa
+%---------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------
+%%% PDF OPTIONS (HYPERREFERENCES)
+\RequirePackage[%
+		colorlinks=true,
+		linkcolor=black,
+		urlcolor=blue,
+		citecolor=blue,
+		breaklinks=true,
+		backref=section
+]{hyperref}	% for colored links (urls and table of contents)
+\hypersetup{  
+  pdfinfo={  
+    Subject={Memoria Departamento de Industria, UTFSM},
+    Keywords={Memoria} {Departamento de Industrias} {UTFSM},
+    Producer={JCR, http://www.rubin-de-celis.com/},
+    Licence={http://www.rubin-de-celis.com/LICENSE},
+    pdfpagemode=FullScreen,
+    pdfmenubar=false,
+    pdftoolbar=false
+  }  
+}
+% IMPORTANT: Do not edit next lines!
+\hypersetup{  
+  pdfinfo={  
+    Title={\TheTitle},
+    Author={\TheAuthor}
+  }  
+}
+%---------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------
+%%% CHAPTER HEADINGS
+%
+% Alternative 1: (Requires fontenc!)
+\usepackage{titlesec}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray80}{|}\hsp}{0pt}{\Huge\bfseries}
+%
+% Alternative 2:
+% Options: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
+%\usepackage[Conny]{fncychap}
+%---------------------------------------------------------------------------
+
+%%%%%%
+
+
+\makeatletter		% IMPORTANT! (Do not delete or move!)
+
+
+%---------------------------------------------------------------------------
+%%% WATERMARK
+% \usepackage{graphicx} % required, if not loaded already!
+\usepackage{type1cm}
+\usepackage{eso-pic}
+\AddToShipoutPicture{%
+            \setlength{\@tempdimb}{.34\paperwidth}%
+            \setlength{\@tempdimc}{.6\paperheight}%
+            \setlength{\unitlength}{1pt}%
+            \put(\strip@pt\@tempdimb,\strip@pt\@tempdimc){%
+            %\makebox(0,0){\rotatebox{45}{\textcolor[gray]{0.9}%
+            %{\fontsize{6cm}{6cm}\selectfont{DRAFT}}}}%
+            \includegraphics{figures/logousm_watermark.jpg}
+            }%
+}
+%---------------------------------------------------------------------------
+
+\makeatother
+
+%---------------------------------------------------------------------------
+%%% TYPESETTING AIDS
+% this can be deleted for a final document.
+\usepackage{lipsum}			  % automated text generation
+\usepackage{blindtext}	  % automated text generation
+%\usepackage{showframe} 	% Show frames (formatting aid)
+%---------------------------------------------------------------------------
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+\pagestyle{plain}           % Reset Header, Footer, Page Number
+
+\insertPage{portada}        % Insertar archivo 'sections/portada.tex'
+
+\frontmatter                % Compose the FrontPage!
+
+
+%---------------------------------------------------------------------------
+%%% DEDICATORIA
+\newpage
+\thispagestyle{empty}		% Hide Header, Footer, Page Number
+\vspace*{4cm}
+\hfill
+\begin{minipage}[t]{0.45\linewidth}
+    \emph{\input{includes/dedicatoria}}	% Archivo dedicatoria.tex
+\end{minipage}
+\vfill
+\newpage\thispagestyle{empty}\cleardoublepage
+%---------------------------------------------------------------------------
+
+\section*{(Agradecimientos) [Título es opcional] }
+\insertPage[plain]{agradecimientos}
+
+
+\section*{RESUMEN EJECUTIVO}
+\insertPage[plain]{resumen}
+
+
+\section*{ABSTRACT}
+\insertPage[plain]{abstract}
+
+
+
+%---------------------------------------------------------------------------
+%%% TABLA DE CONTENIDOS / FIGURAS / CUADROS
+\begin{spacing}{1}
+\tableofcontents
+\listoftables
+\listoffigures
+\end{spacing}
+%---------------------------------------------------------------------------
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Cuerpo Principal (Main Matter)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter             % IMPORTANT! (Do not delete or move!)
+
+\pagestyle{fancy}
+
+\input{includes/capitulo01}
+\input{includes/capitulo02}
+\input{includes/capitulo03}
+%...                    % Agregar aquí más capítulos
+
+\blinddocument          % ATENCIÓN: Borrar en documento final
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Bibliografía
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{spacing}{1}
+\bibliographystyle{thesis_utfsm}    % Alternative 'apalike'
+\bibliography{memoria}              % Archivo 'memoria.bib'
+\end{spacing}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Anexos (Opcional)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+\input{includes/anexo}
+%...                  % Agregar más apéndices
+
+
+\end{document}

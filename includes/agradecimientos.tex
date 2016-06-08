@@ -1,0 +1,70 @@
+%!TEX root = memoria.tex
+
+	Agradezco a quienes contribuyeron para ir mejorando esta plantilla hecha en \LaTeX{}. Los aportes de distintas personas en el \href{http://www.industrias.usm.cl}{Departamento de Industrias}, profesores, alumnos y funcionarios fueron muy útiles para que este documento puede ser ocupado para mejorar la presentación de documentos impresos del Departamento.
+
+	Para obtener los códigos fuente (\LaTeX{} y LyX), ir a:
+	
+	\url{https://bitbucket.org/jaime_rcz/usm-thesis/downloads}
+	
+	y descargar la versión (estable) más reciente. Para los interesados en la última versión (en desarrollo), por favor ocupar \inlinecode{git}:
+	
+	\inlinecode{git clone https://bitbucket.org/jaime_rcz/usm-thesis.git}
+
+%\vspace{10mm}
+
+\subsection*{\color{red}¡Importante!}
+Este documento está preparado para ser impreso por ambos lados de una hoja (\emph{``twoside''}). Para cambiar esto, en la ``clase de documento'', reemplazar la palabra \emph{``twoside''} por \emph{``oneside''}. Es por esto que encontrará algunas hojas que están en blanco, aparentemente sin motivo.
+
+Es posible que debas cambiar otras configuraciones también para imprimir por un sólo lado. En particular aquellas páginas en blanco después de los agradecimientos y dedicatoria.
+
+Contribuye con el ahorro de papel, no ocupes más hojas de las necesarias.
+
+\begin{Verbatim}[frame=lines, label=\inlinecode{/latex/memoria.tex} (extracto)
+				, fontsize=\footnotesize
+				, baselinestretch=1
+				, formatcom=\color{gray}]
+%---------------------------------------------------------------------------
+%%% DOCUMENT CLASS
+\documentclass[
+	12pt,
+	letterpaper,
+	twoside
+]{book}
+%---------------------------------------------------------------------------
+\end{Verbatim}
+
+\newpage
+
+\paragraph{Instrucciones para la Plantilla.}
+
+Editar el archivo \inlinecode{/latex/agradecimientos.tex} para modificar los contenidos de esta sección.
+
+Si no desea incluir una agradecimientos, editar el archivo \inlinecode{/latex/memoria.tex}, y comentar o borrar la sección que se muestra a continuación.
+
+\begin{Verbatim}[frame=lines, label=\inlinecode{/latex/memoria.tex} (extracto)
+, fontsize=\footnotesize
+, baselinestretch=1
+, formatcom=\color{gray}]
+%---------------------------------------------------------------------------
+%%% AGRADECMIENTOS
+\thispagestyle{empty} 	% Hide Header, Footer, Page Number
+\section*{Agradecimientos (Título es Opcional)}
+\input{agradecimientos}	% Archivo agradecimientos.tex
+\newpage\thispagestyle{empty}\cleardoublepage
+%---------------------------------------------------------------------------
+\end{Verbatim}
+
+\paragraph{Codificación de caracteres.}
+
+Todos los archivos \inlinecode{*.tex} de esta plantilla han sido preparados ocupando la codificación de caracteres por defecto \emph{unicode} (UTF-8). Windows (y algunas versiones de OSX) ocupan otro tipo de codificación (ej. \emph{Windows-1252} o \emph{Mac Roman}) por defecto. Si deseas ocupar esta plantilla y encuentras problemas con los caracteres acentuados, entonces puedes optar por una de estas tres alternativas:
+\begin{enumerate}[i)]
+    \item cambiar tu editor (TexMaker, TexStudio, TexShop, etc.) para que ocupe UTF-8 como codificación de caracteres por defecto; o
+    \item cambiar la codificación de cada documento \inlinecode{*.tex} para que ocupe la codificación nativa de tu sistema operativo; y, sustituir en el archivo \inlinecode{memoria.tex} la línea (\#62) que dice:
+    
+    \inlinecode{\\usepackage[utf8x]\{inputenc\}}, por el texto \inlinecode{\\usepackage[latin1]\{inputenc\}}.
+    \item escribir todo ocupando caracteres pre-acentuados (ej. \inlinecode{\\'a} en lugar de á).
+\end{enumerate}
+
+\begin{framed}
+    \textbf{Recuerda:} Mezclar documentos de distintas codificaciones puede generarte muchos problemas al momento de compilar.  
+\end{framed}

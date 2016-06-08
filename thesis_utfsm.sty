@@ -1,0 +1,191 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Plantilla para Memorias y Tesis, UTFSM, Chile
+%	==============================
+%
+% AUTOR:
+%		Jaime C. Rubin-de-Celis <jaime@rubin-de-celis.com>
+%
+% FECHA:		$Date: 2015-06-02 10:05:31 -0400 $
+%
+% LICENCIA:
+% 	Copyright (c) 2012-2016, Jaime C. Rubin-de-Celis
+%   MIT Licence
+%
+% NOTA: Las imágenes son propiedad intelectual de la USM.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\ProvidesPackage{memoriaUSM}[2014]
+\typeout{USM Thesis Style}
+
+%---------------------------------------------------------------------------
+%%% BIBLIOGRAPHY
+\RequirePackage[longnamesfirst]{natbib}
+%---------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------
+%%% GEOMETRY
+% Márgenes (USM)
+%\RequirePackage[margin=25mm,left=40mm]{geometry}
+\RequirePackage[letterpaper]{geometry}
+\geometry{verbose,tmargin=25mm,bmargin=25mm,lmargin=40mm,rmargin=25mm}
+%---------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------
+%%% LINE SPACING
+\RequirePackage{setspace}
+%\linespread{1.5}		% Control del espacio entre líneas
+% NOTE: This package has to be loaded before chngcntr!
+%---------------------------------------------------------------------------
+
+\RequirePackage[T1]{fontenc}
+
+%---------------------------------------------------------------------------
+% FOOTNOTES
+% By default footnotes number are reset to 1 for each Chapter
+% This provides sequential footnotes numbering, regardless of chapter.
+\RequirePackage{chngcntr}
+\counterwithout{footnote}{chapter}
+% NOTE: This package has to be loaded before hyperref!
+%---------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------
+%%% APPEARANCE
+\RequirePackage{booktabs}  % for much better looking tables
+\RequirePackage{tabularx}  % for much better looking tables (might conflict with previous)
+\RequirePackage{multirow}  % for multirow tables
+\RequirePackage{array}     % for better arrays (eg matrices) in maths
+\RequirePackage{float}			% for floating figures
+\RequirePackage{textcomp}
+\RequirePackage{endnotes}  % notes at the end of document
+\RequirePackage{paralist}  % very flexible & customizable lists (eg. enumerate/itemize, etc.)
+\RequirePackage{framed}    % create framed boxes
+\RequirePackage{fancybox}
+\RequirePackage{verbatim}  % adds environment for commenting out blocks of text
+\RequirePackage{fancyvrb}  % fancy verbatim
+\RequirePackage{listings}
+\RequirePackage[parfill]{parskip}
+%\RequirePackage{alltt}		% verbatim with a hint of LaTeX (Experimental!)
+%---------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------
+%%% FIGURES, GRAPHICS AND COLORS
+\RequirePackage{wrapfig}  % flooating Figures and Tables
+\RequirePackage{xcolor}   % custom colors
+	\definecolor{gray80}{gray}{0.80}
+\RequirePackage{graphicx} % graphics library
+\RequirePackage{subfig}   % include more than one captioned figure/table in a single float
+                          % IMPORTANT: subfig is incompatible with subcaption
+%---------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------
+%%% TIKZ
+\RequirePackage{tikz}				% to hard to explain ;-)
+\usetikzlibrary{arrows,positioning,fit,shapes,calc,backgrounds}
+\usetikzlibrary{decorations.pathreplacing}
+%---------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------
+%%% CAPTIONS
+\RequirePackage[font=small,labelfont=bf,justification=centering]{caption}  
+% Caption Fonts and Weight
+% You can try with the next line for multiple caption in a figure/table,
+% however remember it is incompatible with 'subfig'.
+%\RequirePackage{subcaption}
+%---------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------
+%%% HEADERS AND FOOTERS
+\RequirePackage{fancyhdr}
+\newcommand{\hsp}[1][20]{\hspace{#1pt}}
+\fancyhf{}
+%\fancyhead[L]{\scriptsize \rightmark}
+%\fancyfoot[L]{\includegraphics[height=2.5mm]{logousm.png}{\small \hspace{2mm}Departamento de Industrias, Universidad Santa María}}
+
+\fancypagestyle{plain}{%
+	\fancyhf{} % clear all header and footer fields
+	\fancyhead[LE]{\scriptsize \leftmark}
+	\fancyhead[RE]{\scriptsize \rightmark}
+	\fancyhead[LO]{\scriptsize \rightmark}
+	\fancyhead[RO]{\scriptsize \leftmark}
+	\fancyfoot[RO]{\bfseries \thepage} % except the center
+	\fancyfoot[LO]{\includegraphics[height=4mm]{figures/logousm.png}{\footnotesize\hsp[5]Universidad T\'ecnica Federico Santa Mar\'ia, Departamento de Industrias}}
+	\fancyfoot[RE]{{\footnotesize Universidad T\'ecnica Federico Santa Mar\'ia, Departamento de Industrias}\hsp[5]\includegraphics[height=4mm]{figures/logousm.png}}
+	\fancyfoot[LE]{\bfseries \thepage} % except the center
+	\renewcommand{\headrulewidth}{0.1pt}
+	\renewcommand{\footrulewidth}{0.1pt}
+}
+%---------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------
+%%% TABLE OF CONTENTS
+% Put the bibliography in the ToC
+\RequirePackage[nottoc,notlof,notlot]{tocbibind}
+%\RequirePackage[section]{placeins}
+%---------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------
+%%% MATH
+% Use with caution; might conflict with other packages
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+%---------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------
+%%% FONTS
+%	Tipo de Letra (Times New Roman).
+\RequirePackage{txfonts}
+% En Línux, es posible que sea necesario reconstruir el mapa de fuentes.
+% Como administrador, puede ejecutar el siguiente comando:
+% # updmap-sys --enable Map=txfonts.map
+%
+% El tipo de letra debe ser ocupado después de las librerías matemáticas
+% pues contienen macros que son incompatibles con amsmath y amssymb.
+%
+% Alternativas:
+%\RequirePackage{times} 	% No recomendado (Deprecated!)
+% Forzar Times New Roman en fórmulas matemáticas (No recomendado!):
+%\RequirePackage{mathptmx}
+% Las siguientes lineas cambiarán el documento a Arial (La USM no lo aprueba!).
+%\renewcommand{\rmdefault}{phv}		% Convert to Arial
+%\renewcommand{\sfdefault}{phv}		% Convert to Arial
+%---------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------
+%%% TABLE ROTATION
+\RequirePackage{rotating}
+%---------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------
+%%% SPECIAL COMMANDS (DO NOT DELETE!)
+\newcommand{\insertPage}[2][empty]{%
+    \thispagestyle{#1}
+    \input{includes/#2}\newpage
+    \thispagestyle{#1}\cleardoublepage
+}
+
+\newcommand{\inlinecode}[1]{\colorbox{gray!5}{\lstinline[basicstyle=\ttfamily \color{black!100} \small ]|#1|}}
+%---------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------
+% Cambiar los Títulos (sólo en español (Chile))
+\addto{\captionsspanish}{\renewcommand{\contentsname}		{\'Indice de Contenidos}}
+\addto{\captionsspanish}{\renewcommand{\listfigurename}	{\'Indice de Figuras}}
+\addto{\captionsspanish}{\renewcommand{\listtablename}	{\'Indice de Tablas}}
+\addto{\captionsspanish}{\renewcommand{\tablename}			{Tabla}}
+\addto{\captionsspanish}{\renewcommand{\appendixname}		{Anexo}}
+%\addto{\captionsspanish}{\renewcommand{\abstractname}		{Resumen Ejecutivo}}
+%---------------------------------------------------------------------------
