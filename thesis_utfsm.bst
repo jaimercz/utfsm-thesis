@@ -1,7 +1,33 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Plantilla para Memorias y Tesis, UTFSM, Chile
+%	==============================
+%
+% AUTOR:
+%   Jaime C. Rubin-de-Celis <jaime@rubin-de-celis.com>
+%
+% FECHA:	
+%   $Date: 2016-05-28 11:05:52 -0400 (Sat, 28 May 2016) $
+%
+% VERSIÓN:
+%   1.0
+%
+% LICENCIA:
+% 	Copyright (c) 2012-2016, Jaime C. Rubin-de-Celis
+%   The MIT Licence
+
+% NOTA:
+%   Las imágenes son propiedad intelectual de la UTFSM.
+%
+% USO:
+%   Ver archivo adjunto README.md.
+%   Si todo lo demás falla, recuerde "RFM".
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%
 % Este archivo ocupa el estilo de bibliografía `apalike' como base,
 % sin embargo, incluye algunas modificaciones para cumplir con los
-% estándares de la USM, respecto a refencias. 
+% estándares de la UTFSM, respecto a refencias. 
 %
 % También incluye algunas traducciones para español que no siempre
 % son manejadas adecuadamente por paquetes como `babel'.
