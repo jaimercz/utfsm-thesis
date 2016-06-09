@@ -1,6 +1,6 @@
 # Plantilla LaTeX para memorias UTFSM
 
-Plantilla básica (en LaTeX y LyX) para las Memorias y Tesis del [Departamento de Industrias](http://www.industrias.usm.cl) de la [Universidad Técnica Federico Santa María](http://www.usm.cl), Chile.
+Plantilla básica en LaTeX para las Memorias y Tesis del [Departamento de Industrias](http://www.industrias.usm.cl) de la [Universidad Técnica Federico Santa María](http://www.usm.cl), Chile.
 
 ## Uso
 
@@ -36,7 +36,7 @@ La bibliografía está contenida en el archivo `memoria.bib`, y los estilos est�
 Esta plantilla es independiente de la plataforma empleada (Windows, Mac o Linux), sin embargo, debe tener cuidado con la codificación de caracteres por defecto.
 
 ### Codificación de caracteres (UTF-8)
-La plantilla en LaTeX (`memoria.tex`) fue escrita usando una codificación de caracteres UTF-8 o *unicode*. MS Windows (y en ocasiones MAC OSX) ocupan por defecto otra tipo de codificación. Por esto, asegúrese que el editor LaTeX que esté ocupando esté configurado para usar UTF-8; o, puede cambiar la codificación de la plantilla de UTF-8 a Windows-1252 (o Mac Roman).
+La plantilla en LaTeX (`memoria.tex`) fue escrita usando una codificación de caracteres UTF-8 o *unicode*. MS Windows (y en ocasiones MAC OSX) ocupan por defecto otro tipo de codificación. Por esto, asegúrese que el editor LaTeX que esté ocupando esté configurado para usar UTF-8; o, puede cambiar la codificación de la plantilla de UTF-8 a Windows-1252 (o Mac Roman).
 
 **NOTA:** No mezcle archivos con codificaciones diferentes o los resultados no serán los esperados.
 
