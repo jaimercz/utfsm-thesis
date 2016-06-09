@@ -1,10 +1,8 @@
 %!TEX root = memoria.tex
 
-This is a \LaTeX{} thesis template for the Departamento de Industrias, UTFSM.
+This is a \LaTeX{} thesis template for the Departamento de Industrias, UTFSM. A few examples about the inclusion of figures and tables are also provided.
 
-A few examples about the inclusion of figures and tables are also provided.
-
-(The abstract can be edited by opening the file \inlinecode{abstract.tex}.)
+(The abstract can be edited by opening the file \inlinecode{includes/abstract.tex}.)
 
 \vspace{20mm}
 
@@ -16,17 +14,14 @@ A few examples about the inclusion of figures and tables are also provided.
 
 \paragraph{Instrucciones para la Plantilla.}
 
-Editar el archivo \inlinecode{/latex/abstract.tex} para modificar los contenidos de esta sección.
+Editar el archivo \inlinecode{/includes/abstract.tex} para modificar los contenidos de esta sección.
 
-Si no desea incluir un abstract, editar el archivo \inlinecode{/latex/memoria.tex}, y comentar o borrar la sección que se muestra a continuación.
+Si no desea incluir un abstract, editar el archivo \inlinecode{/memoria.tex}, y comentar o borrar la sección que se muestra a continuación.
 
-\begin{Verbatim}[frame=lines, label=\inlinecode{/latex/memoria.tex} (extracto)
+\begin{Verbatim}[frame=lines, label=\inlinecode{/memoria.tex} (extracto)
 				, fontsize=\footnotesize
 				, baselinestretch=1
 				, formatcom=\color{gray}]
-%---------------------------------------------------------------------------
-%%% ABSTRACT
 \section*{ABSTRACT}
-\input{abstract}			% Archivo abstract.tex
-%---------------------------------------------------------------------------
+\insertPage[plain]{abstract}			% Archivo abstract.tex
 \end{Verbatim}
