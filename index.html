@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Utfsm-Thesis by jaimercz</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Utfsm-Thesis</h1>
+        <p class="header">LaTeX project for UTFSM</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/jaimercz/utfsm-thesis/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/jaimercz/utfsm-thesis/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/jaimercz/utfsm-thesis">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/jaimercz">jaimercz</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a id="plantilla-latex-para-memorias-utfsm" class="anchor" href="#plantilla-latex-para-memorias-utfsm" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Plantilla LaTeX para memorias UTFSM</h1>
+
+<p>Plantilla básica (en LaTeX y LyX) para las Memorias y Tesis del <a href="http://www.industrias.usm.cl">Departamento de Industrias</a> de la <a href="http://www.usm.cl">Universidad Técnica Federico Santa María</a>, Chile.</p>
+
+<h2>
+<a id="uso" class="anchor" href="#uso" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Uso</h2>
+
+<p>Para usar esta plantilla tan sólo debe:</p>
+
+<ul>
+<li>cambiar parámetros básicos como autor y fecha (sección CONFIGURACIÓN) en el documento maestro (<code>memoria.tex</code>),</li>
+<li>modificar los archivos de apoyo (portada, resumen, etc.) que desee, y</li>
+<li>
+<p>compilar este archivo (usando una consola LaTeX o su editor favorito):</p>
+
+<pre><code>$ pdflatex memoria.tex
+$ bibtex memoria
+$ pdflatex memoria.tex
+$ pdflatex memoria.tex
+</code></pre>
+</li>
+</ul>
+
+<p><strong>NOTA:</strong> <code>pdflatex</code> debe ejecutarse (en consola) tres veces, como se indica y en   el orden mostrado para que latex pueda construir las Tablas de Contenidos y las   referencias cruzadas de la Bibliografía.</p>
+
+<h3>
+<a id="documentación" class="anchor" href="#documentaci%C3%B3n" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentación</h3>
+
+<p>Toda la documentación está contenida en el archivo de salida (<code>memoria.pdf</code>), incluyendo información sobre las normas UTFSM empleadas para su confección.</p>
+
+<p>El archivo maestro (<code>memoria.tex</code>) contiene también información sobre como modificar parámetros básicos (autor, título, fecha, etc.).</p>
+
+<h3>
+<a id="acerca-de-la-bibliografía" class="anchor" href="#acerca-de-la-bibliograf%C3%ADa" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Acerca de la Bibliografía</h3>
+
+<p>La bibliografía está contenida en el archivo <code>memoria.bib</code>, y los estilos están en el archivo <code>thesis_utfsm.bst</code> (que básicamente es una castellanización de las normas APA, <em>American Psychological Association</em>).</p>
+
+<p><strong>Nota:</strong> Las normas APA requieren que todas las entradas bibliográficas (incluyendo <strong>webpage</strong>) tengan un año (<em>year</em>) definido. Si al compilar ve referencias extrañas en lugar de los nombres de los autores de artículos citados, entonces lo más probable es que tenga un problema con el año de una de sus referencias.</p>
+
+<p><strong>Recomendación:</strong> Ocupe un editor bibliográfico como Mendeley o BibDesk.</p>
+
+<h2>
+<a id="plataformas-soportadas" class="anchor" href="#plataformas-soportadas" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Plataformas Soportadas</h2>
+
+<p>Esta plantilla es independiente de la plataforma empleada (Windows, Mac o Linux), sin embargo, debe tener cuidado con la codificación de caracteres por defecto.</p>
+
+<h3>
+<a id="codificación-de-caracteres-utf-8" class="anchor" href="#codificaci%C3%B3n-de-caracteres-utf-8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Codificación de caracteres (UTF-8)</h3>
+
+<p>La plantilla en LaTeX (<code>memoria.tex</code>) fue escrita usando una codificación de caracteres UTF-8 o <em>unicode</em>. MS Windows (y en ocasiones MAC OSX) ocupan por defecto otra tipo de codificación. Por esto, asegúrese que el editor LaTeX que esté ocupando esté configurado para usar UTF-8; o, puede cambiar la codificación de la plantilla de UTF-8 a Windows-1252 (o Mac Roman).</p>
+
+<p><strong>NOTA:</strong> No mezcle archivos con codificaciones diferentes o los resultados no serán los esperados.</p>
+
+<h2>
+<a id="contribuciones" class="anchor" href="#contribuciones" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contribuciones</h2>
+
+<p>Puede hacerlas directamente en <a href="https://github.com/jaimercz/utfsm-thesis/issues">Issues</a>.</p>
+
+<h2>
+<a id="licencia" class="anchor" href="#licencia" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Licencia</h2>
+
+<blockquote>
+<p>The MIT License (MIT), 2016</p>
+</blockquote>
+
+<p><strong>Nota:</strong> Las imágenes son propiedad intelectual de la Universidad Técnica Federico Santa María.</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
