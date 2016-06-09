@@ -4,30 +4,70 @@ Plantilla \LaTeX{} para las Memorias y Tesis del Departamento de Industrias, UTF
 
 Se incluyen también algunos ejemplos de cómo incorporar tablas y gráficos en distintas presentaciones respetando las Normas de Biblioteca para Memorias y Tesis de la UTFSM.
 
-Guía (resumida) para el uso de esta plantilla: Abra \inlinecode{/latex/memoria.tex}, cambie los parámetros de la portada y compile. Si hay errores, verifique que todos los paquetes (\LaTeX{}) han sido instalados. Vuelva a compilar. Si tiene problemas, vea los Capítulos 2 y 3 de este documento.
-
-\vspace{30mm}
+\vspace{20mm}
 
 \paragraph{Palabras Clave.}
 \LaTeX{}, Plantilla para Memoria, Departamento de Industrias, USM.
 
-\vspace{20mm}
+\vspace{10mm}
 
 
-\paragraph{Instrucciones para la Plantilla.}
+\subsection*{\color{red}Para el impaciente ...}
 
-Editar el archivo \inlinecode{/latex/resumen.tex} para modificar los contenidos de esta sección.
+Abra \inlinecode{memoria.tex}, cambie los parámetros de la portada (en la sección \emph{CONFIGURACIÓN}) y compile. Si hay errores, verifique que todos los paquetes (\LaTeX{}) han sido instalados. Vuelva a compilar.
 
-Si no desea incluir un resumen ejecutivo, editar el archivo \inlinecode{/latex/memoria.tex}, y comentar o borrar la sección que se muestra a continuación.
+Si desea omitir alguna sección (dedicatoria, agradecimientos, etc.), revise el documento maestro \inlinecode{memoria.tex} y comente (o elimine) las líneas correspondientes. Por ejemplo, para eliminar esta sección, borre las líneas:
 
-\begin{Verbatim}[frame=lines, label=\inlinecode{/latex/memoria.tex} (extracto)
-				, fontsize=\footnotesize
-				, baselinestretch=1
-				, formatcom=\color{gray}]
-%---------------------------------------------------------------------------
-%%% RESUMEN EJECUTIVO
+\begin{Verbatim}[frame=lines, label=\inlinecode{memoria.tex} (extracto)
+, fontsize=\footnotesize
+, baselinestretch=1
+, formatcom=\color{gray}]
 \section*{RESUMEN EJECUTIVO}
-\input{resumen}		% Archivo resumen.tex
-\newpage
+\insertPage[plain]{resumen}}
+\end{Verbatim}
+
+En los Capítulos 2 y 3 de este documento encontrará información más detallada.
+
+
+\subsection*{\color{red}¡Importante!}
+
+\paragraph{Impresión por ambos lados.}
+Este documento está preparado para ser impreso por ambos lados de una hoja (\emph{``twoside''}). Para cambiar esto, en la ``clase de documento'', reemplazar la palabra \emph{``twoside''} por \emph{``oneside''}. Es por esto que encontrará algunas hojas que están en blanco, aparentemente sin motivo.
+
+
+\begin{Verbatim}[frame=lines, label=\inlinecode{memoria.tex} (extracto)
+, fontsize=\footnotesize
+, baselinestretch=1
+, formatcom=\color{gray}]
+%---------------------------------------------------------------------------
+%%% DOCUMENT CLASS
+\documentclass[
+11pt,
+letterpaper,
+twoside
+]{book}
 %---------------------------------------------------------------------------
 \end{Verbatim}
+
+
+Es posible que debas cambiar otras configuraciones también para imprimir por un sólo lado. En particular aquellas páginas en blanco después de los agradecimientos y dedicatoria.
+
+Contribuye con el ahorro de papel, no ocupes más hojas de las necesarias.
+
+\paragraph{Codificación de caracteres.}
+
+Todos los archivos \inlinecode{*.tex} de esta plantilla han sido preparados ocupando la codificación de caracteres por defecto \emph{unicode} (UTF-8). Windows (y algunas versiones de OSX) ocupan otro tipo de codificación (ej. \emph{Windows-1252} o \emph{Mac Roman}).
+
+Si deseas ocupar esta plantilla y encuentras problemas con los caracteres acentuados, entonces puedes optar por una de estas tres alternativas:
+\begin{enumerate}[i)]
+    \item cambiar tu editor (TexMaker, TexStudio, TexShop, etc.) para que ocupe UTF-8 como codificación de caracteres por defecto; o
+    \item cambiar la codificación de cada documento \inlinecode{*.tex} para que ocupe la codificación nativa de tu sistema operativo; y, sustituir en el archivo \inlinecode{memoria.tex} la línea (\#62) que dice:
+    
+    \inlinecode{\\usepackage[utf8x]\{inputenc\}}, por el texto \inlinecode{\\usepackage[latin1]\{inputenc\}}.
+    \item escribir todo ocupando caracteres pre-acentuados (ej. \inlinecode{\\'a} en lugar de á).
+\end{enumerate}
+
+\begin{framed}
+    \textbf{Recuerda:} Mezclar documentos de distintas codificaciones puede generarte muchos problemas al momento de compilar.  
+\end{framed}
+

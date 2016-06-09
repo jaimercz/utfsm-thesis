@@ -1,4 +1,4 @@
-%!TEX root = memoria.tex
+%!TEX root = ../memoria.tex
 
 \chapter{Instalación de \LaTeX}
 
@@ -22,12 +22,27 @@ visite esta página:
 
 Puede obtener, en forma gratuita, las distribuciones de \LaTeX{},
 según su plataforma, en:
-\begin{itemize}
-\item Windows: \href{http://miktex.org/}{http://miktex.org/}; también puede
+
+\begin{description}
+\item [Windows] \href{http://miktex.org/}{http://miktex.org/}; también puede
 ocupar \href{http://www.tug.org/protext/}{http://www.tug.org/protext/}.
-\item MacOS: \href{http://www.tug.org/mactex/}{http://www.tug.org/mactex/}.
-\item Unix/Linux: \href{http://www.tug.org/texlive/}{http://www.tug.org/texlive/}.
-\end{itemize}
+
+MikTex ofrece una versión básica. Después de instalarlo, asegúrese de descargar los paquetes adicionales requeridos para compilar esta plantilla.
+
+\item [MacOS] \href{http://www.tug.org/mactex/}{http://www.tug.org/mactex/}.
+
+La versión de MacTex es completa e incluye por defecto todos los paquetes necesarios para compilar esta plantilla.
+
+\item [Unix/Linux] \href{http://www.tug.org/texlive/}{http://www.tug.org/texlive/}.
+
+La instalación de TexLive en plataformas *nix es muy sencilla y directa a través de una consola (con permisos de administración):
+
+(K/X)Ubuntu / Debian: \inlinecode{# apt-get install texlive}
+
+Fedora: \inlinecode{# dnf install texlive}
+
+RedHat / CentOS: \inlinecode{# yum install texlive}
+\end{description}
 
 Para una referencia completa sobre \LaTeX{}, recomendamos el libro
 de \citealp{Lamport94}; aunque para solucionar problemas específicos,
@@ -38,7 +53,7 @@ en la Bibliografía \citep{Mittelbach04,Oetiker06,Roberts05}.
 \section{Editores para \LaTeX}
 Existen muchos editores de \LaTeX, la mayoría de ellos de distribución gratuita y con versiones para los distintos sistemas operativos:
 \begin{description}
-    \item [TexStudio] Mac, Windows y Linux. (\href{www.texstudio.org}{www.texstudio.org}).
+    \item [TexStudio] Mac, Windows y Linux. \href{www.texstudio.org}{www.texstudio.org}.
     \item [TexMaker] Mac, Windows y Linux.  \href{www.xm1math.net/texmaker/}{www.xm1math.net/texmaker/}.
     \item[TeXworks] Mac, Window y Linux. \href{https://www.tug.org/texworks/}{https://www.tug.org/texworks/}
     \item [TexShop] Mac. \href{http://pages.uoregon.edu/koch/texshop/}{http://pages.uoregon.edu/koch/texshop/}.
