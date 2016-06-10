@@ -28,12 +28,11 @@
 %---------------------------------------------------------------------------
 %%% DOCUMENT CLASS
 \documentclass[
-	11pt,
-	letterpaper,
-	twoside
-]{book}
+	11pt,			% Tamaño de fuente (11pt)
+	letterpaper,	% Tamaño del papel (carta)
+	twoside			% Impresión por ambos lados
+]{thesis_utfsm}
 %---------------------------------------------------------------------------
-
 
 %---------------------------------------------------------------------------
 %%% LANGUAGE: Spanish
@@ -176,7 +175,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-
 \pagestyle{plain}           % Reset Header, Footer, Page Number
 
 \insertPage{portada}        % Insertar archivo 'sections/portada.tex'
@@ -228,8 +226,8 @@
 
 \pagestyle{fancy}
 
-\input{includes/capitulo01}
-\input{includes/capitulo02}
+%\input{includes/capitulo01}
+%\input{includes/capitulo02}
 \input{includes/capitulo03}
 %...                    % Agregar aquí más capítulos
 
