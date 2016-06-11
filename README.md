@@ -6,26 +6,23 @@ Plantilla básica en LaTeX para las Memorias y Tesis del [Departamento de Indust
 
 Para usar esta plantilla tan sólo debe:
 
-* cambiar parámetros básicos como autor y fecha (sección CONFIGURACIÓN) en el documento maestro (`memoria.tex`),
-* modificar los archivos de apoyo (portada, resumen, etc.) que desee, y
-* compilar este archivo (usando una consola LaTeX o su editor favorito):
-
+* cambiar parámetros básicos como autor y fecha en el documento de configuración (`config.tex`),
+* modificar los archivos de apoyo (portada, resumen, capítulos, etc.) que desee, y
+* compilar el documento maestro `memoria.tex` (usando una consola LaTeX o su editor favorito):
 
 		$ pdflatex memoria.tex
 		$ bibtex memoria
 		$ pdflatex memoria.tex
 		$ pdflatex memoria.tex
 
-**NOTA:** `pdflatex` debe ejecutarse (en consola) tres veces, como se indica y en   el orden mostrado para que latex pueda construir las Tablas de Contenidos y las   referencias cruzadas de la Bibliografía.
+**NOTA:** `pdflatex` debe ejecutarse (en consola) tres veces, como se indica y en   el orden mostrado para que latex pueda construir las Tablas de Contenidos y las referencias cruzadas de la Bibliografía.
 
 ### Documentación
 
 Toda la documentación está contenida en el archivo de salida (`memoria.pdf`), incluyendo información sobre las normas UTFSM empleadas para su confección.
 
-El archivo maestro (`memoria.tex`) contiene también información sobre como modificar parámetros básicos (autor, título, fecha, etc.).
-
 ### Acerca de la Bibliografía
-La bibliografía está contenida en el archivo `memoria.bib`, y los estilos están en el archivo `thesis_utfsm.bst` (que básicamente es una castellanización de las normas APA, *American Psychological Association*).
+La bibliografía está contenida en el archivo `bibliography.bib`, y los estilos bibliográficos están en el archivo `thesis_utfsm.bst` (que básicamente es una castellanización de las normas APA, *American Psychological Association*).
 
 **Nota:** Las normas APA requieren que todas las entradas bibliográficas (incluyendo **webpage**) tengan un año (*year*) definido. Si al compilar ve referencias extrañas en lugar de los nombres de los autores de artículos citados, entonces lo más probable es que tenga un problema con el año de una de sus referencias.
 
