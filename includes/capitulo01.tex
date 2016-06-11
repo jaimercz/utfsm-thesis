@@ -2,9 +2,44 @@
 
 \chapter{¿Cómo usar esta Plantilla?}
 
-Para instrucciones sobre el uso y configuración de esta plantilla, por favor, revise el documento \inlinecode{memoria.tex} con un editor de texto o editor de \LaTeX{}.
+\section{Obtener el código fuente \LaTeX}
 
-Toda configuración general se encuentra en el documento maestro (\inlinecode{memoria.tex}). Ahí podrá cambiar los parámetros de la portada y los documentos a incluir. Por ejemplo, si necesita más capítulos, simplemente puede agregarlos creando el archivo (ej. \inlinecode{/includes/capitulo04.tex})  e incorporando la siguiente línea en el documento maestro:
+Primero, por supuesto, obtener la plantilla y los archivos de apoyo desde:
+
+\url{https://jaimercz.github.io/utfsm-thesis}
+
+O, mejor aún, ocupando \inlinecode{git}:
+
+\inlinecode{git clone https://github.com/jaimercz/utfsm-thesis}
+
+\section{Configuración}
+
+La configuración básica (nombre del autor, comisión evaluadora, fecha, grado y título de la memoria o tesis) está en el archivo \inlinecode{config.tex}. Modifique ahí los parámetros básicos de este documento (que afectan la portada y los meta-datos PDF).
+
+\section{Compilar (primera vez)}
+
+Abra el documento \inlinecode{memoria.tex} con un editor de texto o editor de \LaTeX{} de su preferencia.
+
+Proceda con la compilación:
+
+\begin{Verbatim}[frame=lines, label=Consola (Shell) o Línea de comandos
+, fontsize=\footnotesize
+, baselinestretch=1
+, formatcom=\color{gray}]
+    $ pdflatex memoria.tex
+    $ bibtex memoria
+    $ pdflatex memoria.tex
+    $ pdflatex memoria.tex
+\end{Verbatim}
+
+Si hay errores, lo más probable es que le falte alguno de las paquetes necesarios que ocupa esta plantilla.
+
+\section{Modificación de contenidos}
+
+
+Abrir el documento maestro (\inlinecode{memoria.tex}) y modificar o incluir los documentos que componen su memoria.
+
+Por ejemplo, para incorporar un nuevo capítulo, simplemente puede agregarlo incorporando la siguiente línea en el documento maestro:
 
 \inlinecode{\\input\{includes/capitulo04\}}
 
@@ -24,11 +59,9 @@ Toda configuración general se encuentra en el documento maestro (\inlinecode{me
 %...              % Agregar aquí más capítulos
 \end{Verbatim}
 
+\section{Para tomar en cuenta (Recomendaciones)}
 
-
-\subsection*{\color{red}¡Importante!}
-
-\paragraph{Impresión por ambos lados.}
+\subsection{Impresión por ambos lados.}
 Este documento está preparado para ser impreso por ambos lados de una hoja (\emph{``twoside''}). Para cambiar esto, en la ``clase de documento'', reemplazar la palabra \emph{``twoside''} por \emph{``oneside''}. Es por esto que encontrará algunas hojas que están en blanco, aparentemente sin motivo.
 
 
@@ -39,51 +72,37 @@ Este documento está preparado para ser impreso por ambos lados de una hoja (\em
 %---------------------------------------------------------------------------
 %%% DOCUMENT CLASS
 \documentclass[
-11pt,
-letterpaper,
-twoside
-]{book}
+    11pt,
+    letterpaper,
+    twoside
+]{thesis_utfsm}
 %---------------------------------------------------------------------------
 \end{Verbatim}
 
 
 Es posible que debas cambiar otras configuraciones también para imprimir por un sólo lado. En particular aquellas páginas en blanco después de los agradecimientos y dedicatoria.
 
-Contribuye con el ahorro de papel, no ocupes más hojas de las necesarias.
-
-\paragraph{Codificación de caracteres.}
+\section{Codificación de caracteres.}
 
 Todos los archivos \inlinecode{*.tex} de esta plantilla han sido preparados ocupando la codificación de caracteres por defecto \emph{unicode} (UTF-8). Windows (y algunas versiones de OSX) ocupan otro tipo de codificación (ej. \emph{Windows-1252} o \emph{Mac Roman}).
 
 Si deseas ocupar esta plantilla y encuentras problemas con los caracteres acentuados, entonces puedes optar por una de estas tres alternativas:
-\begin{enumerate}[i)]
+\begin{enumerate}[(i)]
     \item cambiar tu editor (TexMaker, TexStudio, TexShop, etc.) para que ocupe UTF-8 como codificación de caracteres por defecto; o
-    \item cambiar la codificación de cada documento \inlinecode{*.tex} para que ocupe la codificación nativa de tu sistema operativo; y, sustituir en el archivo \inlinecode{memoria.tex} la línea (\#62) que dice:
+    \item cambiar la codificación de cada documento \inlinecode{*.tex} para que ocupe la codificación nativa de tu sistema operativo; y, modifica la configuración (\inlinecode{config.tex}) dice:
     
     \inlinecode{\\usepackage[utf8x]\{inputenc\}}, por el texto \inlinecode{\\usepackage[latin1]\{inputenc\}}.
     \item escribir todo ocupando caracteres pre-acentuados (ej. \inlinecode{\\'a} en lugar de á).
 \end{enumerate}
 
+\vspace{10mm}
 \begin{framed}
     \textbf{Recuerda:} Mezclar documentos de distintas codificaciones puede generarte muchos problemas al momento de compilar.  
 \end{framed}
 
 
-
-%%%%%
-\section{Diagramación}
-Este documento fue realizado usando \LaTeX{} (\citeauthor{latex:whatis}), aunque puede fácilmente ser exportado a LyX (\citeauthor{lyx}). Para ver como transformarlo a Lyx, puede revisar el Wiki (\citeauthor{wikilyx}).
-
-Usted necesitará un compilador de \LaTeX. Los más comúnmente ocupados son \citeauthor{miktex} (Windows) y \citeauthor{mactex} (Apple); Sistemas *nix (incluyendo linux) traen \TeX{} por defecto.
-
-Para una referencia completa sobre \LaTeX{}, recomendamos el libro de \cite{Lamport94}; aunque para solucionar problemas específicos, su mejor aliado es Internet.
-
-% Other Author (Included only in Bibliography)
-También puede revisar \citet{Roberts05}, \citet{Oetiker06}, y \citet{Mittelbach04}.
-
-
 \section{Requisitos}
-Los formatos para la generación este documento están contenidos en la Hoja de Estilo \inlinecode{thesis_utfsm.sty}.
+Los paquetes que se ocupan y son indispensables para la generación este documento están contenidos en el documento de clase \inlinecode{thesis_utfsm.cls}.
 
 Para que funcione correctamente se requiere tener instaladas (como mínimo) las siguientes extensiones \LaTeX{}:
 \begin{Verbatim}[frame=lines, label=Paquetes requeridos por \inlinecode{thesis_utfsm.sty}
@@ -127,7 +146,19 @@ parskip     % Separación entre párrafos
 La mayoría de las distribuciones \LaTeX{} traen estos paquetes por defecto, sin embargo, en Windows es posible que deba instalar algunos de ellos si ha instalado el archivo básico de MikTeX.
 
 
-\section{Figuras}
+
+%%%%%
+\section{Diagramación}
+Este documento fue realizado usando \LaTeX{} (\citeauthor{latex:whatis}), aunque puede fácilmente ser exportado a LyX (\citeauthor{lyx}). Para ver como transformarlo a Lyx, puede revisar el Wiki (\citeauthor{wikilyx}).
+
+Usted necesitará un compilador de \LaTeX. Los más comúnmente ocupados son \citeauthor{miktex} (Windows) y \citeauthor{mactex} (Apple); Sistemas *nix (incluyendo linux) traen \TeX{} por defecto.
+
+Para una referencia completa sobre \LaTeX{}, recomendamos el libro de \cite{Lamport94}; aunque para solucionar problemas específicos, su mejor aliado es Internet.
+
+% Other Author (Included only in Bibliography)
+También puede revisar \citet{Roberts05}, \citet{Oetiker06}, y \citet{Mittelbach04}.
+
+\subsection{Figuras}
 La siguiente es una figura basada en el archivo \inlinecode{figures/logoind.png}. En este caso, la descripción de la figura va en la parte inferior (ver \autoref{fig:logoind2}).
 
 % Inclusión de Figuras
@@ -192,9 +223,8 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibu
 \end{wrapfigure}
 \end{Verbatim}
 
-\newpage
 
-\section{Tablas}
+\subsection{Tablas}
 
 La siguiente es una tabla o cuadro básica (ver \autoref{tbl:temperaturas}). Notar las referencias cruzadas y el título de la tabla en la parte superior.
 
@@ -243,7 +273,7 @@ La siguiente es una tabla o cuadro básica (ver \autoref{tbl:temperaturas}). Not
 
 
 
-\section{Rotación de Tablas}
+\subsubsection{Rotación de Tablas}
 En caso de tener tablas muy grandes, o si necesita una tabla rotada.
 \begin{sidewaystable}
     \centering
@@ -261,7 +291,7 @@ En caso de tener tablas muy grandes, o si necesita una tabla rotada.
 
 \newpage
 
-\section{Opciones Avanzadas para Gráficos}
+\subsection{Opciones Avanzadas para Gráficos}
 
 Los packetes Ti\emph{k}Z y PGF ofrecen alternativas para la creación de gráficos con las más diversas formas y opciones. Para ver opciones consultar \href{http://www.texample.net/tikz/}{www.texample.net/tikz/}.
 

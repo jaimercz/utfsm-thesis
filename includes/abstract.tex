@@ -1,4 +1,4 @@
-%!TEX root = memoria.tex
+%!TEX root = ../memoria.tex
 
 This is a \LaTeX{} thesis template for the Departamento de Industrias, UTFSM. A few examples about the inclusion of figures and tables are also provided.
 
@@ -12,7 +12,8 @@ This is a \LaTeX{} thesis template for the Departamento de Industrias, UTFSM. A 
 \vspace{20mm}
 
 
-\paragraph{Instrucciones para la Plantilla.}
+\begin{framed}
+\noindent\textbf{Instrucciones para la Plantilla.}
 
 Editar el archivo \inlinecode{/includes/abstract.tex} para modificar los contenidos de esta sección.
 
@@ -23,5 +24,7 @@ Si no desea incluir un abstract, editar el archivo \inlinecode{/memoria.tex}, y 
 				, baselinestretch=1
 				, formatcom=\color{gray}]
 \section*{ABSTRACT}
-\insertPage[plain]{abstract}			% Archivo abstract.tex
+\insertFile[plain]{abstract}			% Archivo abstract.tex
 \end{Verbatim}
+
+\end{framed}

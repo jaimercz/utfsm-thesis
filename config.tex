@@ -1,0 +1,53 @@
+%!TEX root = memoria.tex
+
+%---------------------------------------------------------------------------
+%%% CONFIGURACIÓN
+%---------------------------------------------------------------------------
+%
+%%% CODIFICACIÓN DE CARACTERES
+% Este documento está escrito usando caracteres Unicode (UTF8)
+% Por lo que la siguiente línea es necesaria para reconocer los acentos
+% y otros caracteres en español.
+% Si ve caracteres extraños en el PDF (en Windows o MAC) pruebe 
+% con alguna de estas líneas:
+\usepackage[utf8x]{inputenc}    % *nix / Linux / MacOSX
+%\usepackage[latin1]{inputenc}  % Windows (MacOSX)
+
+
+\newcommand{\TheTitle}{%
+    TÍTULO DE MEMORIA (EL TÍTULO SÓLO PUEDE TENER UN MÁXIMO DE 3 LÍNEAS)
+}%
+\newcommand{\TheAuthor}          {NOMBRES Y APELLIDOS DEL (DE LA) AUTOR(A)}
+\newcommand{\TheGrade}           {INGENIERO/A CIVIL INDUSTRIAL} % Elegir "O" ó "A"
+\newcommand{\TheCity}            {SANTIAGO}
+\newcommand{\TheDate}            {MAYO 2016}
+\newcommand{\TheAdvisor}         {SRA. XXXXXXX XXXXXXXX X.}
+\newcommand{\TheCoAdvisor}       {SR. XXXXXXX XXXXXXXX X.}
+%\newcommand{\TheScndCoAdvisor}   {SRTA. XXXXXXX XXXXXXXX X.} % Opcional
+
+% Marca de agua, puede ser deshabilitada para impresión rápida
+\insertWatermark{figures/logousm_watermark.jpg}
+%---------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------
+%%% No editar (¡Ver licencia!) (MIT License, 2016)
+%---------------------------------------------------------------------------
+\hypersetup{  
+    pdfinfo={  
+        Subject={Memoria Departamento de Industria, UTFSM},
+        Keywords={Memoria} {Departamento de Industrias} {UTFSM},
+        Producer={JCR LaTeX Templates, http://www.rubin-de-celis.com/},
+        Licence={http://www.rubin-de-celis.com/LICENSE},
+        pdfpagemode=FullScreen,
+        pdfmenubar=false,
+        pdftoolbar=false
+    }  
+}
+\hypersetup{  
+    pdfinfo={  
+        Title={\TheTitle},
+        Author={\TheAuthor}
+    }  
+}
+%---------------------------------------------------------------------------

@@ -1,89 +1,45 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	Plantilla para Memorias y Tesis, UTFSM, Chile
-%	==============================
+%	Estilos (LateX styles) para Memorias y Tesis, UTFSM, Chile
+%	=============================================
 %
-% AUTOR:
-%   Jaime C. Rubin-de-Celis <jaime@rubin-de-celis.com>
+% Autor:
+%       Jaime C. Rubin-de-Celis <jaime@rubin-de-celis.com>
 %
-% FECHA:	
-%   $Date: 2016-05-28 11:05:52 -0400 (Sat, 28 May 2016) $
+% Fecha:	
+%       $Date: 2016-05-28 11:05:52 -0400 (Sat, 28 May 2016) $
 %
-% VERSIÓN:
-%   1.0
+% Versión:
+%       1.0
 %
-% LICENCIA:
-% 	Copyright (c) 2012-2016, Jaime C. Rubin-de-Celis
-%   The MIT Licence
-
-% NOTA:
-%   Las imágenes son propiedad intelectual de la UTFSM.
+% Licencia:
+%       Copyright (c) 2012-2016, Jaime C. Rubin-de-Celis
+%       The MIT Licence
 %
-% USO:
-%   Ver archivo adjunto README.md.
-%   Si todo lo demás falla, recuerde "RFM".
+% Nota:
+%       Las imágenes son propiedad intelectual de la UTFSM.
+%
+% Uso:
+%       Ver archivo adjunto README.md.
+%       Si todo lo demás falla, recuerde "RFM".
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\ProvidesPackage{memoriaUSM}[2016]
-\typeout{USM Thesis Style}
+\ProvidesPackage{utfsm_thesis}[6/6/2016 UTFSM Thesis Style Sheet]
+\typeout{UTFSM Thesis Style}
 
-%---------------------------------------------------------------------------
-%%% GEOMETRY
-% Márgenes (USM)
-%\RequirePackage[margin=25mm,left=40mm]{geometry}
+% Márgenes (UTFSM)
 \RequirePackage{geometry}
 \geometry{verbose,tmargin=25mm,bmargin=25mm,lmargin=40mm,rmargin=25mm}
-%---------------------------------------------------------------------------
 
-
-\RequirePackage[T1]{fontenc}
-
-%---------------------------------------------------------------------------
-% FOOTNOTES
-% By default footnotes number are reset to 1 for each Chapter
-% This provides sequential footnotes numbering, regardless of chapter.
+% Numeración de las notas al pie según capítulo
 \RequirePackage{chngcntr}
 \counterwithout{footnote}{chapter}
-% NOTE: This package has to be loaded before hyperref!
-%---------------------------------------------------------------------------
 
-
-%---------------------------------------------------------------------------
-%%% APPEARANCE
-\RequirePackage{booktabs}  % for much better looking tables
-\RequirePackage{tabularx}  % for much better looking tables (might conflict with previous)
-\RequirePackage{multirow}  % for multirow tables
-\RequirePackage{array}     % for better arrays (eg matrices) in maths
-\RequirePackage{float}			% for floating figures
-\RequirePackage{textcomp}
-\RequirePackage{endnotes}  % notes at the end of document
-\RequirePackage{paralist}  % very flexible & customizable lists (eg. enumerate/itemize, etc.)
-\RequirePackage{framed}    % create framed boxes
-\RequirePackage{fancybox}
-\RequirePackage{verbatim}  % adds environment for commenting out blocks of text
-\RequirePackage{fancyvrb}  % fancy verbatim
-\RequirePackage{listings}
-\RequirePackage[parfill]{parskip}
-%---------------------------------------------------------------------------
-
-
-%---------------------------------------------------------------------------
-%%% FIGURES, GRAPHICS AND COLORS
-\RequirePackage{wrapfig}  % flooating Figures and Tables
-\RequirePackage{xcolor}   % custom colors
-	\definecolor{gray80}{gray}{0.80}
-\RequirePackage{graphicx} % graphics library
-\RequirePackage{subfig}   % include more than one captioned figure/table in a single float
-                          % IMPORTANT: subfig is incompatible with subcaption
-%---------------------------------------------------------------------------
-
-
-%---------------------------------------------------------------------------
-%%% TIKZ
-\RequirePackage{tikz}				% to hard to explain ;-)
-\usetikzlibrary{arrows,positioning,fit,shapes,calc,backgrounds}
-\usetikzlibrary{decorations.pathreplacing}
-%---------------------------------------------------------------------------
+% Custom Colors
+\RequirePackage{xcolor}
+\definecolor{gray20}{gray}{0.20}
+\definecolor{gray50}{gray}{0.50}
+\definecolor{gray80}{gray}{0.80}
 
 
 %---------------------------------------------------------------------------
@@ -98,8 +54,6 @@
 
 %---------------------------------------------------------------------------
 %%% HEADERS AND FOOTERS
-\RequirePackage{fancyhdr}
-\newcommand{\hsp}[1][20]{\hspace{#1pt}}
 \fancyhf{}
 %\fancyhead[L]{\scriptsize \rightmark}
 %\fancyfoot[L]{\includegraphics[height=2.5mm]{logousm.png}{\small \hspace{2mm}Departamento de Industrias, Universidad Santa María}}
@@ -111,28 +65,12 @@
 	\fancyhead[LO]{\scriptsize \rightmark}
 	\fancyhead[RO]{\scriptsize \leftmark}
 	\fancyfoot[RO]{\bfseries \thepage} % except the center
-	\fancyfoot[LO]{\includegraphics[height=4mm]{figures/logousm.png}{\footnotesize\hsp[5]Universidad T\'ecnica Federico Santa Mar\'ia, Departamento de Industrias}}
+	\fancyfoot[LO]{\includegraphics[height=3mm]{figures/logoind.png}{\footnotesize\hsp[5]Universidad T\'ecnica Federico Santa Mar\'ia, Departamento de Industrias}}
 	\fancyfoot[RE]{{\footnotesize Universidad T\'ecnica Federico Santa Mar\'ia, Departamento de Industrias}\hsp[5]\includegraphics[height=4mm]{figures/logousm.png}}
 	\fancyfoot[LE]{\bfseries \thepage} % except the center
 	\renewcommand{\headrulewidth}{0.1pt}
 	\renewcommand{\footrulewidth}{0.1pt}
 }
-%---------------------------------------------------------------------------
-
-
-%---------------------------------------------------------------------------
-%%% TABLE OF CONTENTS
-% Put the bibliography in the ToC
-\RequirePackage[nottoc,notlof,notlot]{tocbibind}
-%\RequirePackage[section]{placeins}
-%---------------------------------------------------------------------------
-
-
-%---------------------------------------------------------------------------
-%%% MATH
-% Use with caution; might conflict with other packages
-\RequirePackage{amssymb}
-\RequirePackage{amsmath}
 %---------------------------------------------------------------------------
 
 
@@ -151,36 +89,30 @@
 %\RequirePackage{times} 	% No recomendado (Deprecated!)
 % Forzar Times New Roman en fórmulas matemáticas (No recomendado!):
 %\RequirePackage{mathptmx}
-% Las siguientes lineas cambiarán el documento a Arial (La USM no lo aprueba!).
+% Las siguientes lineas cambiarán el documento a Arial (La UTFSM no lo aprueba!).
 %\renewcommand{\rmdefault}{phv}		% Convert to Arial
 %\renewcommand{\sfdefault}{phv}		% Convert to Arial
 %---------------------------------------------------------------------------
 
 
 %---------------------------------------------------------------------------
-%%% TABLE ROTATION
-\RequirePackage{rotating}
-%---------------------------------------------------------------------------
+%%% CHAPTER HEADINGS
+\titleformat{\chapter}[hang]
+{\Huge\bfseries}
+{\thechapter\hsp\textcolor{gray80}{|}\hsp}{0pt}
+{\Huge\bfseries}
+
+\makeatletter		% IMPORTANT! (Do not delete or move!)
 
 
-%---------------------------------------------------------------------------
-%%% SPECIAL COMMANDS (DO NOT DELETE!)
-\newcommand{\insertPage}[2][empty]{%
-    \thispagestyle{#1}
-    \input{includes/#2}\newpage
-    \thispagestyle{#1}\cleardoublepage
-}
-
-\newcommand{\inlinecode}[1]{\colorbox{gray!5}{\lstinline[basicstyle=\ttfamily \color{black!100} \small ]|#1|}}
 %---------------------------------------------------------------------------
 
 
 %---------------------------------------------------------------------------
 % Cambiar los Títulos (sólo en español (Chile))
-\addto{\captionsspanish}{\renewcommand{\contentsname}		{\'Indice de Contenidos}}
-\addto{\captionsspanish}{\renewcommand{\listfigurename}	{\'Indice de Figuras}}
+\addto{\captionsspanish}{\renewcommand{\contentsname}   {\'Indice de Contenidos}}
+\addto{\captionsspanish}{\renewcommand{\listfigurename} {\'Indice de Figuras}}
 \addto{\captionsspanish}{\renewcommand{\listtablename}	{\'Indice de Tablas}}
-\addto{\captionsspanish}{\renewcommand{\tablename}			{Tabla}}
-\addto{\captionsspanish}{\renewcommand{\appendixname}		{Anexo}}
-%\addto{\captionsspanish}{\renewcommand{\abstractname}		{Resumen Ejecutivo}}
+\addto{\captionsspanish}{\renewcommand{\tablename}      {Tabla}}
+\addto{\captionsspanish}{\renewcommand{\appendixname}   {Anexo}}
 %---------------------------------------------------------------------------
