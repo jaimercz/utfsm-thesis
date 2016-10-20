@@ -17,8 +17,11 @@ Para usar esta plantilla tan sólo debe:
 
 **NOTA:** `pdflatex` debe ejecutarse (en consola) tres veces, como se indica y en   el orden mostrado para que latex pueda construir las Tablas de Contenidos y las referencias cruzadas de la Bibliografía.
 
-**NOTA 2:** Si se encuentra en un ambiente Mac OSX o linux, puedes correr el comando `make`
-dentro de este directorio, el cual llamara el Makefile se generara el pdf sin necesidad de correr los 4 comandos mencionados anteriormente. Para esto solo se debe instalar el ejecutable `rubber`, disponible para OSX y linux.
+**NOTA 2:** Si se encuentra en un ambiente Mac OSX o linux, puedes correr el comando desde la terminal:
+
+		$ make
+
+este cual llamara el Makefile el cual generara el pdf sin necesidad de correr los 4 comandos mencionados anteriormente. Para esto solo se debe instalar `rubber`, disponible para OSX y linux.
 
 ### Documentación
 
