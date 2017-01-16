@@ -25,7 +25,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{utfsm_thesis}[6/6/2016 UTFSM Thesis class]
+\ProvidesClass{thesis_utfsm}[6/6/2016 UTFSM Thesis class]
 \LoadClass{book}
 
 %---------------------------------------------------------------------------
@@ -113,7 +113,8 @@ linkcolor=black,
 urlcolor=blue,
 citecolor=blue,
 breaklinks=true,
-backref=section
+backref=section,
+pdfpagelabels
 ]{hyperref}	% for colored links (urls and table of contents)
 %---------------------------------------------------------------------------
 
