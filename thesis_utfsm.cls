@@ -12,7 +12,7 @@
 %       1.1
 %
 % Licencia:
-%       Copyright (c) 2012-2016, Jaime C. Rubin-de-Celis
+%       Copyright (c) 2012-2017, Jaime C. Rubin-de-Celis
 %       The MIT License
 %
 % Nota:
@@ -71,7 +71,7 @@
 \RequirePackage{wrapfig}    % flooating Figures and Tables
 \RequirePackage{xcolor}     % custom colors
 \RequirePackage{graphicx}   % graphics library
-\RequirePackage{subfig}     % include more than one captioned figure/table in a single float
+\RequirePackage{subcaption}     % include more than one captioned figure/table in a single float
                             % Important!: subfig is incompatible with subcaption
 \RequirePackage{type1cm}    % Watermarks
 \RequirePackage{eso-pic}    % Watermarks
