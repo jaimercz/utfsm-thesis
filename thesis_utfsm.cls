@@ -6,27 +6,27 @@
 %       Jaime C. Rubin-de-Celis <jaime@rubin-de-celis.com>
 %
 % Fecha:	
-%       $Date: 2016-05-28 11:05:52 -0400 (Sat, 28 May 2016) $
+%       $Date: 2017-10-28 11:25:21 -0300 (Sat, 28 Oct 2017) $
 %
 % Versión:
-%       1.0
+%       1.1
 %
 % Licencia:
 %       Copyright (c) 2012-2016, Jaime C. Rubin-de-Celis
-%       The MIT Licence
+%       The MIT License
 %
 % Nota:
 %       Las imágenes son propiedad intelectual de la UTFSM.
 %
 % Uso:
 %       Ver archivo adjunto README.md.
-%       Si todo lo demás falla, recuerde "RFM".
+%       Si todo lo demás falla, recuerde "RTFM".
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{thesis_utfsm}[6/6/2016 UTFSM Thesis class]
-\LoadClass{book}
+\LoadClass[oneside]{book}
 
 %---------------------------------------------------------------------------
 %%% LANGUAGE: Spanish
