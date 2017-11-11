@@ -229,21 +229,22 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibu
 La siguiente es una tabla o cuadro básica (ver \autoref{tbl:temperaturas}). Notar las referencias cruzadas y el título de la tabla en la parte superior.
 
 \begin{table}[h!]
-    \caption{Tabla de Temperaturas}\label{tbl:temperaturas}
-    \begin{tabularx}{\linewidth}{  l  c  c  X }
-    \hline
-    \textbf{\textsc{Day}} &  \textbf{\textsc{Min Temp}} 
-    		& \textbf{\textsc{Max Temp}} & \textbf{\textsc{Summary}}\\
-	  \hline\hline
-    Monday & 11C & 22C & A clear day with lots of sunshine.
-    However, the strong breeze will bring down the temperatures. \\ \hline
-    Tuesday & 9C & 19C & Cloudy with rain, across many northern regions. Clear spells
-    across most of Scotland and Northern Ireland,
-    but rain reaching the far northwest. \\ \hline
-    Wednesday & 10C & 21C & Rain will still linger for the morning.
-    Conditions will improve by early afternoon and continue
-    throughout the evening. \\
-    \hline
+    \caption[Ejemplo: Tabla de Temperaturas]{Tabla de Temperaturas}
+    \label{tbl:temperaturas}
+    \begin{tabularx}{\linewidth}{@{} l  c  c  X @{}}
+        \toprule
+        \textbf{\textsc{Day}} &  \textbf{\textsc{Min Temp}} 
+        		& \textbf{\textsc{Max Temp}} & \textbf{\textsc{Summary}}\\
+    	  \hline\hline
+        Monday & 11C & 22C & A clear day with lots of sunshine.
+        However, the strong breeze will bring down the temperatures. \\ \hline
+        Tuesday & 9C & 19C & Cloudy with rain, across many northern regions. Clear spells
+        across most of Scotland and Northern Ireland,
+        but rain reaching the far northwest. \\ \hline
+        Wednesday & 10C & 21C & Rain will still linger for the morning.
+        Conditions will improve by early afternoon and continue
+        throughout the evening. \\
+        \bottomrule
     \end{tabularx}
 \end{table}
 
@@ -251,22 +252,24 @@ La siguiente es una tabla o cuadro básica (ver \autoref{tbl:temperaturas}). Not
 				, fontsize=\footnotesize, numbers=left
 				, baselinestretch=1
 				, formatcom=\color{gray}]
+
 \begin{table}[h!]
-    \caption{Tabla de Temperaturas}\label{tbl:temperaturas}
-    \begin{tabularx}{\linewidth}{  l  c  c  X }
-    \hline
-    \textbf{\textsc{Day}} &  \textbf{\textsc{Min Temp}} 
-    		& \textbf{\textsc{Max Temp}} & \textbf{\textsc{Summary}}\\
-	  \hline\hline
-    Monday & 11C & 22C & A clear day with lots of sunshine.
-    However, the strong breeze will bring down the temperatures. \\ \hline
-    Tuesday & 9C & 19C & Cloudy with rain, across many northern regions. Clear spells
-    across most of Scotland and Northern Ireland,
-    but rain reaching the far northwest. \\ \hline
-    Wednesday & 10C & 21C & Rain will still linger for the morning.
-    Conditions will improve by early afternoon and continue
-    throughout the evening. \\
-    \hline
+    \caption[Ejemplo: Tabla de Temperaturas]{Tabla de Temperaturas}
+    \label{tbl:temperaturas}
+    \begin{tabularx}{\linewidth}{@{} l  c  c  X @{}}
+        \toprule
+        \textbf{\textsc{Day}} &  \textbf{\textsc{Min Temp}} 
+        & \textbf{\textsc{Max Temp}} & \textbf{\textsc{Summary}}\\
+        \hline\hline
+        Monday & 11C & 22C & A clear day with lots of sunshine.
+        However, the strong breeze will bring down the temperatures. \\ \hline
+        Tuesday & 9C & 19C & Cloudy with rain, across many northern regions. Clear spells
+        across most of Scotland and Northern Ireland,
+        but rain reaching the far northwest. \\ \hline
+        Wednesday & 10C & 21C & Rain will still linger for the morning.
+        Conditions will improve by early afternoon and continue
+        throughout the evening. \\
+        \bottomrule
     \end{tabularx}
 \end{table}
 \end{Verbatim}
@@ -274,22 +277,42 @@ La siguiente es una tabla o cuadro básica (ver \autoref{tbl:temperaturas}). Not
 
 
 \subsubsection{Rotación de Tablas}
-En caso de tener tablas muy grandes, o si necesita una tabla rotada.
+En caso de tener tablas muy grandes, o si necesita una tabla rotada, puedes ocupar \inlinecode{sidewaystable} (\autoref{tbl:example-sidewaystable}).
 \begin{sidewaystable}
     \centering
-    \caption{Rotación de Tablas}
-    \begin{tabularx}{\columnwidth}{X X}
-        \hline\hline
+    \caption[Ejemplo: Rotación de Tablas]{Rotación de Tablas}
+    \label{tbl:example-sidewaystable}
+    \begin{tabularx}{\columnwidth}{@{}XX@{}}
+        \toprule
         \textbf{Column 1} & \textbf{Column 2}\\
+        \hline
         \hline
         Second First & Second Second\\
         \blindtext & \blindtext\\
-        \hline\hline
+        \bottomrule
     \end{tabularx}
 \end{sidewaystable}
 
+\begin{Verbatim}[frame=lines, label=\autoref{tbl:example-sidewaystable} Tabla Rotada
+, fontsize=\footnotesize, numbers=left
+, baselinestretch=1
+, formatcom=\color{gray}]
+\begin{sidewaystable}
+    \centering
+    \caption[Ejemplo: Rotación de Tablas]{Rotación de Tablas}
+    \label{tbl:example-sidewaystable}
+    \begin{tabularx}{\columnwidth}{@{}XX@{}}
+        \toprule
+        \textbf{Column 1} & \textbf{Column 2}\\
+        \hline
+        \hline
+        Second First & Second Second\\
+        \blindtext & \blindtext\\
+        \bottomrule
+    \end{tabularx}
+\end{sidewaystable}
+\end{Verbatim}
 
-\newpage
 
 \subsection{Opciones Avanzadas para Gráficos}
 

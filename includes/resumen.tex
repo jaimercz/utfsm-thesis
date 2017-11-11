@@ -34,28 +34,8 @@ Por ejemplo, para eliminar esta sección, borre las líneas:
 \newpage
 \subsection*{¡Importante! [LEAME]}
 
-\subsubsection*{Impresión por ambos lados.}
-Este documento está preparado para ser impreso por ambos lados de una hoja (\emph{``twoside''}). Para cambiar esto, en la ``clase de documento'' (archivo \inlinecode{memoria.tex}), reemplazar la palabra \emph{``twoside''} por \emph{``oneside''}. Es por esto que encontrará algunas hojas que están en blanco, aparentemente sin motivo.
-
-
-\begin{Verbatim}[frame=lines, label=\inlinecode{memoria.tex} (extracto)
-, fontsize=\footnotesize
-, baselinestretch=1
-, formatcom=\color{gray}]
-%---------------------------------------------------------------------------
-%%% DOCUMENT CLASS
-\documentclass[
-    11pt,
-    letterpaper,
-    twoside
-]{thesis_utfsm}
-%---------------------------------------------------------------------------
-\end{Verbatim}
-
-
-Es posible que deba cambiar otras configuraciones también para imprimir por un sólo lado. En particular aquellas páginas en blanco después de los agradecimientos y dedicatoria.
-
-Contribuye con el ahorro de papel, no ocupes más hojas de las necesarias.
+\subsubsection*{Impresión por un solo lado.}
+A partir del año 2016, el Departamento de Industrias sólo requiere la entrega digital de los archivos de memorias y tesis. Por este motivo, este documento está preparado para ser impreso por un solo lado de una hoja (\emph{``oneside''}), y facilitar así su lectura en pantallas. Esta configuración es parte de archivo de clase \inlinecode{thesis_utfsm.cls}.
 
 \subsubsection*{Codificación de caracteres.}
 
@@ -76,6 +56,6 @@ Si deseas ocupar esta plantilla y encuentras problemas con los caracteres acentu
 \begin{framed}
     \noindent\textbf{Recuerde:} 
     
-    Mezclar documentos de distintas codificaciones puede generarte muchos problemas al momento de compilar.  
+    Mezclar documentos de distintas codificaciones puede generar muchos problemas al momento de compilar.  
 \end{framed}
 
