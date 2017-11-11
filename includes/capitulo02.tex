@@ -41,18 +41,20 @@ Las ilustraciones (gráficos, láminas, fotografías, etc.) en lo posible deben 
 Los números asignados a las tablas se colocarán en la parte superior de ellas, seguidos de los títulos correspondientes. Ver \autoref{tbl:table_example}
 
 \begin{table}[ht]
-\centering
-\caption{Ejemplo de Numeración de Tablas.}
-\begin{tabular}{p{3cm}|p{3cm}|p{3cm}}
-\hline
-\textbf{Columna 1} & \textbf{Columna 2} & \textbf{Columna 3} \\
-\hline\hline
-... & ... & ... \\
-\hline
-... & ... & ... \\
-\hline
-\end{tabular}
-\label{tbl:table_example}
+    \centering
+    \caption[Ejemplo: Numeración de Tablas]{Ejemplo de Numeración de Tablas.}
+    \begin{tabular}{@{}p{3cm}|p{3cm}|p{3cm}@{}}
+        \toprule
+        \textbf{Columna 1} & \textbf{Columna 2} & \textbf{Columna 3} \\
+        \hline\hline
+        ... & ... & ... \\
+        \hline
+        ... & ... & ... \\
+        \hline
+        ... & ... & ... \\
+        \bottomrule
+    \end{tabular}
+    \label{tbl:table_example}
 \end{table}
 
 \end{description}
@@ -60,7 +62,10 @@ Los números asignados a las tablas se colocarán en la parte superior de ellas,
 \section{Otros Formatos UTFSM}
 \subsection{Formato de las Cubiertas (Empaste)}
 
+A partir del año 2016, ya no es necesaria la entrega de una copia física de la memoria o tesis, siendo esto opcional. Si decide imprimirla, estás son las normas para el empaste.
+
 La cubierta o tapa será de empaste duro, cubierta de vinilo o similar de color NEGRO con letras doradas, según se muestran en \autoref{fig:thesis_cover} y \autoref{fig:thesis_cover_lateral}.
+
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.7\textwidth]{figures/thesis_cover.png}
@@ -113,10 +118,10 @@ Los CD se guardarán, en la biblioteca, en una caja de acrílico que tendrá una
 
 
 \begin{figure}[ht!]
-\centering
-\includegraphics[width=.4\textwidth]{figures/thesis_cd_cover.png}
-\caption{Cubierta de Disco Compacto para Memorias y Tesis UTFSM.}
-\label{fig:thesis_cd_cover}
+    \centering
+    \includegraphics[width=.4\textwidth]{figures/thesis_cd_cover.png}
+    \caption{Cubierta de Disco Compacto para Memorias y Tesis UTFSM.}
+    \label{fig:thesis_cd_cover}
 \end{figure}
 
 
