@@ -5,7 +5,7 @@
 % Autor:
 %       Jaime C. Rubin-de-Celis <jaime@rubin-de-celis.com>
 %
-% Fecha:	
+% Fecha:
 %       $Date: 2017-10-28 11:25:21 -0300 (Sat, 28 Oct 2017) $
 %
 % Versión:
@@ -30,7 +30,7 @@
 
 %---------------------------------------------------------------------------
 %%% LANGUAGE: Spanish
-\RequirePackage[spanish,es-tabla]{babel}
+\RequirePackage[spanish,es-tabla,english]{babel}
 \addto\shorthandsspanish{\spanishdeactivate{~<>}}
 %---------------------------------------------------------------------------
 
@@ -96,7 +96,7 @@
 %%% TABLA DE CONTENIDOS (TDC)
 
 % Control del nivel de profundidad de la Tabla de Contenidos (TDC).
-\setcounter{tocdepth}{3}        % {3} => incluirá subsubseccions en la TDC. 
+\setcounter{tocdepth}{3}        % {3} => incluirá subsubseccions en la TDC.
 
 % Control de la numeración de secciones, subsecciones y subsubsecciones
 \setcounter{secnumdepth}{3}     % {3} => numerará las subsubsecciones.
@@ -137,12 +137,12 @@ pdfpagelabels
             %{\fontsize{6cm}{6cm}\selectfont{DRAFT}}}}%
             \includegraphics{#1}
         }%
-    }    
+    }
 }
 
 \newcommand{\thesisTitle}[1]{
     \vspace{15mm}
-    \begin{spacing}{1.5} 
+    \begin{spacing}{1.5}
         \textbf{\large #1}
     \end{spacing}
     \vspace{15mm}

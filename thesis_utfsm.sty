@@ -5,7 +5,7 @@
 % Autor:
 %       Jaime C. Rubin-de-Celis <jaime@rubin-de-celis.com>
 %
-% Fecha:	
+% Fecha:
 %       $Date: 2016-05-28 11:05:52 -0400 (Sat, 28 May 2016) $
 %
 % Versión:
@@ -29,7 +29,7 @@
 
 % Márgenes (UTFSM)
 \RequirePackage{geometry}
-\geometry{verbose,tmargin=25mm,bmargin=25mm,lmargin=40mm,rmargin=25mm}
+\geometry{verbose,tmargin=25mm,bmargin=25mm,lmargin=40mm,rmargin=25mm,nomarginpar}
 
 % Numeración de las notas al pie según capítulo
 \RequirePackage{chngcntr}
@@ -44,7 +44,7 @@
 
 %---------------------------------------------------------------------------
 %%% CAPTIONS
-\RequirePackage[font=small,labelfont=bf,justification=centering]{caption}  
+\RequirePackage[font=small,labelfont=bf,justification=centering]{caption}
 % Caption Fonts and Weight
 % You can try with the next line for multiple caption in a figure/table,
 % however remember it is incompatible with 'subfig'.
@@ -55,19 +55,12 @@
 %---------------------------------------------------------------------------
 %%% HEADERS AND FOOTERS
 \fancyhf{}
-%\fancyhead[L]{\scriptsize \rightmark}
-%\fancyfoot[L]{\includegraphics[height=2.5mm]{logousm.png}{\small \hspace{2mm}Departamento de Industrias, Universidad Santa María}}
-
 \fancypagestyle{plain}{%
 	\fancyhf{} % clear all header and footer fields
-	\fancyhead[LE]{\scriptsize \leftmark}
-	\fancyhead[RE]{\scriptsize \rightmark}
-	\fancyhead[LO]{\scriptsize \rightmark}
-	\fancyhead[RO]{\scriptsize \leftmark}
-	\fancyfoot[RO]{\bfseries \thepage} % except the center
-	\fancyfoot[LO]{\includegraphics[height=3mm]{figures/logoind.png}{\footnotesize\hsp[5]Universidad T\'ecnica Federico Santa Mar\'ia, Departamento de Industrias}}
-	\fancyfoot[RE]{{\footnotesize Universidad T\'ecnica Federico Santa Mar\'ia, Departamento de Industrias}\hsp[5]\includegraphics[height=4mm]{figures/logousm.png}}
-	\fancyfoot[LE]{\bfseries \thepage} % except the center
+	\fancyhead[L]{\scriptsize \leftmark}
+	\fancyhead[R]{\scriptsize \rightmark}
+	\fancyfoot[R]{\bfseries \thepage} % except the center
+	\fancyfoot[L]{\includegraphics[height=3mm]{figures/logoind.png}{\footnotesize\hsp[5]Universidad T\'ecnica Federico Santa Mar\'ia, Departamento de Industrias}}
 	\renewcommand{\headrulewidth}{0.1pt}
 	\renewcommand{\footrulewidth}{0.1pt}
 }
