@@ -4,34 +4,12 @@ Plantilla \LaTeX{} para las Memorias y Tesis del Departamento de Industrias, UTF
 
 Se incluyen también algunos ejemplos de cómo incorporar tablas y gráficos en distintas presentaciones respetando las Normas de Biblioteca para Memorias y Tesis de la UTFSM.
 
-\vspace{20mm}
+\vspace{10mm}
 
 \paragraph{Palabras Clave.}
 \LaTeX{}, Plantilla para Memoria, Departamento de Industrias, UTFSM.
 
-\vspace{10mm}
-
-\begin{framed}
-\noindent\textbf{\color{red}Para el impaciente ...}
-
-Abra el archivo de configuración \inlinecode{config.tex} para cambiar título, autor, fecha, etc. de la portada y del documento en general.
-
-Abra  y compile el documento maestro \inlinecode{memoria.tex}. Si hay errores, verifique primero que todos los paquetes \LaTeX{} han sido instalados.
-
-Si desea omitir alguna sección (dedicatoria, agradecimientos, etc.), revise el documento maestro \inlinecode{memoria.tex} y agregue o comente (o elimine) las líneas correspondientes.
-
-Por ejemplo, para eliminar esta sección, borre las líneas:
-
-\begin{Verbatim}[frame=lines, label=\inlinecode{memoria.tex} (extracto)
-, fontsize=\footnotesize
-, baselinestretch=1
-, formatcom=\color{gray}]
-\section*{RESUMEN EJECUTIVO}
-\insertFile[plain]{resumen}}
-\end{Verbatim}
-\end{framed}
-
-\newpage
+\vspace*{1cm}
 \subsection*{¡Importante! [LEAME]}
 
 \subsubsection*{Impresión por un solo lado.}
@@ -47,7 +25,11 @@ Si deseas ocupar esta plantilla y encuentras problemas con los caracteres acentu
     
     \item cambiar la codificación de cada documento \inlinecode{*.tex} para que ocupe la codificación nativa de tu sistema operativo; y, modificar el archivo \inlinecode{config.tex} la línea que dice:
     
-    \inlinecode{\\usepackage[utf8x]\{inputenc\}}
+    OSX, Linux: \inlinecode{\\usepackage[utf8x]\{inputenc\}}
+
+    Windows:    \inlinecode{\\usepackage[latin1]\{inputenc\}}
+    
+    Overleaf:   \inlinecode{\\usepackage[utf8]\{inputenc\}} \url{https://overleaf.com}
     
     \item escribir todo ocupando caracteres pre-acentuados (ej. \inlinecode{\\'a} en lugar de á).
 \end{enumerate}
@@ -56,6 +38,6 @@ Si deseas ocupar esta plantilla y encuentras problemas con los caracteres acentu
 \begin{framed}
     \noindent\textbf{Recuerde:} 
     
-    Mezclar documentos de distintas codificaciones puede generar muchos problemas al momento de compilar.  
+    \noindent Mezclar documentos de distintas codificaciones puede generar muchos problemas al momento de compilar.  
 \end{framed}
 

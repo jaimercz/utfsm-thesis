@@ -4,11 +4,8 @@
 
 \section{Obtener el código fuente \LaTeX}
 
-Primero, por supuesto, obtener la plantilla y los archivos de apoyo desde:
+Primero, por supuesto, obtener la plantilla y los archivos de apoyo desde GitHub (\url{https://github.com}):
 
-\url{https://jaimercz.github.io/utfsm-thesis}
-
-O, mejor aún, ocupando \inlinecode{git}:
 
 \inlinecode{git clone https://github.com/jaimercz/utfsm-thesis}
 
@@ -27,12 +24,14 @@ Proceda con la compilación:
 , baselinestretch=1
 , formatcom=\color{gray}]
     $ pdflatex memoria.tex
-    $ bibtex memoria
+    $ biber memoria
     $ pdflatex memoria.tex
     $ pdflatex memoria.tex
 \end{Verbatim}
 
 Si hay errores, lo más probable es que le falte alguno de las paquetes necesarios que ocupa esta plantilla.
+
+Esta version hace uso de \inlinecode{biber} en lugar de \inlinecode{natbib / bibtex}. Natbib es del año 1988, y el manejo de documentos digitales modernos no estaba contemplado entonces.
 
 \section{Modificación de contenidos}
 
@@ -47,42 +46,12 @@ Por ejemplo, para incorporar un nuevo capítulo, simplemente puede agregarlo inc
 				, fontsize=\footnotesize
 				, baselinestretch=1
 				, formatcom=\color{gray}]
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	Cuerpo Principal (Main Matter)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\mainmatter
-\pagestyle{fancy}
-
-\input{includes/capitulo01}
-\input{includes/capitulo02}
-\input{includes/capitulo03}
+% \input{includes/capitulo04}
+% \input{includes/capitulo05}
 %...              % Agregar aquí más capítulos
 \end{Verbatim}
 
-\section{Para tomar en cuenta (Recomendaciones)}
-
-\subsection{Impresión por ambos lados.}
-Este documento está preparado para ser impreso por ambos lados de una hoja (\emph{``twoside''}). Para cambiar esto, en la ``clase de documento'', reemplazar la palabra \emph{``twoside''} por \emph{``oneside''}. Es por esto que encontrará algunas hojas que están en blanco, aparentemente sin motivo.
-
-
-\begin{Verbatim}[frame=lines, label=\inlinecode{memoria.tex} (extracto (continuación))
-, fontsize=\footnotesize
-, baselinestretch=1
-, formatcom=\color{gray}]
-%---------------------------------------------------------------------------
-%%% DOCUMENT CLASS
-\documentclass[
-    11pt,
-    letterpaper,
-    twoside
-]{thesis_utfsm}
-%---------------------------------------------------------------------------
-\end{Verbatim}
-
-
-Es posible que debas cambiar otras configuraciones también para imprimir por un sólo lado. En particular aquellas páginas en blanco después de los agradecimientos y dedicatoria.
-
-\section{Codificación de caracteres.}
+\section{Codificación de caracteres}
 
 Todos los archivos \inlinecode{*.tex} de esta plantilla han sido preparados ocupando la codificación de caracteres por defecto \emph{unicode} (UTF-8). Windows (y algunas versiones de OSX) ocupan otro tipo de codificación (ej. \emph{Windows-1252} o \emph{Mac Roman}).
 
@@ -91,7 +60,12 @@ Si deseas ocupar esta plantilla y encuentras problemas con los caracteres acentu
     \item cambiar tu editor (TexMaker, TexStudio, TexShop, etc.) para que ocupe UTF-8 como codificación de caracteres por defecto; o
     \item cambiar la codificación de cada documento \inlinecode{*.tex} para que ocupe la codificación nativa de tu sistema operativo; y, modifica la configuración (\inlinecode{config.tex}) dice:
     
-    \inlinecode{\\usepackage[utf8x]\{inputenc\}}, por el texto \inlinecode{\\usepackage[latin1]\{inputenc\}}.
+    OSX, *nix: \inlinecode{\\usepackage[utf8x]\{inputenc\}}
+
+    Windows: \inlinecode{\\usepackage[latin1]\{inputenc\}}
+
+    Overleaf: \inlinecode{\\usepackage[utf8]\{inputenc\}} (\url{https://overleaf.com})
+
     \item escribir todo ocupando caracteres pre-acentuados (ej. \inlinecode{\\'a} en lugar de á).
 \end{enumerate}
 
@@ -100,7 +74,7 @@ Si deseas ocupar esta plantilla y encuentras problemas con los caracteres acentu
     \textbf{Recuerda:} Mezclar documentos de distintas codificaciones puede generarte muchos problemas al momento de compilar.  
 \end{framed}
 
-
+\newpage
 \section{Requisitos}
 Los paquetes que se ocupan y son indispensables para la generación este documento están contenidos en el documento de clase \inlinecode{thesis_utfsm.cls}.
 
@@ -110,7 +84,7 @@ Para que funcione correctamente se requiere tener instaladas (como mínimo) las 
 				, baselinestretch=1
 				, formatcom=\color{gray}]
 geometry    % Márgenes y tamaño de páginas
-natbib      % Bibliografía
+biblatex    % Bibliografía
 fontenc     % Codificación de Caracteres
 inputenc    % Métodos de entrada (acentos)
 fancyhdr    % Encabezados 'Fancy'
@@ -146,10 +120,10 @@ parskip     % Separación entre párrafos
 La mayoría de las distribuciones \LaTeX{} traen estos paquetes por defecto, sin embargo, en Windows es posible que deba instalar algunos de ellos si ha instalado el archivo básico de MikTeX.
 
 
-
+\newpage
 %%%%%
 \section{Diagramación}
-Este documento fue realizado usando \LaTeX{} (\citeauthor{latex:whatis}), aunque puede fácilmente ser exportado a LyX (\citeauthor{lyx}). Para ver como transformarlo a Lyx, puede revisar el Wiki (\citeauthor{wikilyx}).
+Este documento fue realizado usando \LaTeX{} (\citet{latex:whatis}), aunque puede fácilmente ser exportado a LyX (\citeauthor{lyx}). Para ver como transformarlo a Lyx, puede revisar el Wiki (\citeauthor{wikilyx}).
 
 Usted necesitará un compilador de \LaTeX. Los más comúnmente ocupados son \citeauthor{miktex} (Windows) y \citeauthor{mactex} (Apple); Sistemas *nix (incluyendo linux) traen \TeX{} por defecto.
 
@@ -164,7 +138,7 @@ La siguiente es una figura basada en el archivo \inlinecode{figures/logoind.png}
 % Inclusión de Figuras
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=.4\textwidth]{figures/logoind.png}
+\includegraphics[width=.3\textwidth]{figures/logoind.png}
 \caption[Logotipo Departamento de Industrias]{Logotipo Departamento de Industrias\\
 {\scriptsize (Fuente: Departamento de Industrias)}}
 \label{fig:logoind2}
@@ -188,11 +162,11 @@ La forma de incorporar la \autoref{fig:logoind2} se muestra a continuación:
 
 Otra forma de incorporar figuras es mediante un \inlinecode{float}. En este caso, la figura es incorporada como una imagen ``flotante'' a un costado del texto  (ver Figura \autoref{fig:logousm_float}).
 
-\begin{wrapfigure}{o}{.4\textwidth}
+\begin{wrapfigure}{o}{.3\textwidth}
     \vspace{-20pt}
     \begin{spacing}{1}
         \begin{center}
-            \includegraphics[width=.35\columnwidth]{figures/logousm.png}
+            \includegraphics[width=.25\columnwidth]{figures/logousm.png}
             \vspace{-10pt}
             \caption{Logotipo USM (Float)}
             \label{fig:logousm_float}

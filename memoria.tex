@@ -25,7 +25,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[
-	12pt,			% Tamaño de fuente (11pt)
+	11pt,			% Tamaño de fuente (11pt)
 	letterpaper,	% Tamaño del papel (carta)
 ]{thesis_utfsm}
 
@@ -42,6 +42,7 @@
 \usepackage{blindtext}      % automated text generation
 \usepackage{lipsum}         % automated text generation
 
+\addbibresource{bibliography.bib}
 
 %---------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -66,9 +67,9 @@
 \dedicatoria{%
     \emph{\huge A mi familia \dots}
 
-    \vspace*{2cm}[Puede ocupar este espacio para escribir una
-    dedicatoria (opcional). Revise el archivo maestro
-    \inlinecode{memoria.tex}]
+    \vspace*{2cm} Puede ocupar este espacio para escribir una
+    dedicatoria (opcional). [Revise el archivo maestro
+    \inlinecode{memoria.tex} para modificar / eliminar esta sección.]
 }%
 
 \section*{(AGRADECIMIENTOS) [Título es opcional] }
@@ -109,8 +110,9 @@
 %	Bibliografía
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{spacing}{1}      % Single space for Bibliography
-    \bibliographystyle{thesis_utfsm}    % Alternative 'apalike'
-    \bibliography{bibliography}         % Archivo 'bibliography.bib'
+    % \bibliographystyle{thesis_utfsm}    % Alternative 'apalike'
+    % \bibliography{bibliography}         % Archivo 'bibliography.bib'
+    \printbibliography
 \end{spacing}
 
 

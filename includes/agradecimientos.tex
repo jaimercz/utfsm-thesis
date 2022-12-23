@@ -4,27 +4,40 @@
     
     Los aportes y comentarios de distintas personas en el \href{http://www.industrias.usm.cl}{Departamento de Industrias} fueron muy útiles para que este documento puede ser ocupado para mejorar la presentación de tesis y memorias del Departamento (y la universidad).
     
-    Contribuciones a este documento:
-    \begin{itemize}
-        \item José Miguel Gonzalez P. (\href{jose.gonzalezp@usm.cl}{jose.gonzalezp@usm.cl})
-        \item Javiera Silva A. (\href{javiera.silva@usm.cl}{javiera.silva@usm.cl})
-        \item Diego Cáceres S. (\href{diego.caceress@alumnos.usm.cl}{diego.caceress@alumnos.usm.cl})
-    \end{itemize}
-    \hfill Gracias!!!
-
-
 \vspace{20mm}
 \begin{framed}
 \noindent\textbf{\color{red}Para el impaciente ...}
 
-Descargar plantilla desde : \url{https://jaimercz.github.io/utfsm-thesis}
-	
-    
-\noindent O, si busca la última versión, por favor ocupar \inlinecode{git}:
+Por favor ocupar \inlinecode{git}:
 
-	\inlinecode{git clone https://github.com/jaimercz/utfsm-thesis.git}
+\inlinecode{git clone https://github.com/jaimercz/utfsm-thesis.git}
 
-Para los interesados en \inlinecode{git} revisar \citet{git2017}.
+Para los interesados en \inlinecode{git} revisar \parencite{git2017}.
 
+Abra el archivo de configuración \inlinecode{config.tex} para cambiar título, autor, fecha, etc. de la portada y del documento en general.
 
+Abra  y compile el documento maestro \inlinecode{memoria.tex}.
+
+\begin{Verbatim}[fontsize=\small]
+        $ pdflatex memoria.tex
+        $ biber memoria
+        $ pdflatex memoria.tex
+        $ pdflatex memoria.tex
+\end{Verbatim}
+
+Esta version ocupa \inlinecode{biber} en lugar de \inlinecode{natbib / bibtex}:
+
+Si hay errores, verifique primero que todos los paquetes \LaTeX{} han sido instalados.
+
+Si desea omitir alguna sección (dedicatoria, agradecimientos, etc.), revise el documento maestro \inlinecode{memoria.tex} y agregue o comente (o elimine) las líneas correspondientes.
+
+Por ejemplo, para eliminar esta sección, borre las líneas:
+
+\begin{Verbatim}[frame=lines, label=\inlinecode{memoria.tex} (extracto)
+, fontsize=\footnotesize
+, baselinestretch=1
+, formatcom=\color{gray}]
+\section*{Agradecimientos}
+\insertFile[plain]{agradecimientos}}
+\end{Verbatim}
 \end{framed}

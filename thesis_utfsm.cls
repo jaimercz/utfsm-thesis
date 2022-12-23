@@ -36,7 +36,18 @@
 
 %---------------------------------------------------------------------------
 %%% BIBLIOGRAPHY
-\RequirePackage[longnamesfirst]{natbib}
+% \RequirePackage[longnamesfirst]{natbib}
+% Natbib and bibtex are to old to recognize webpages (and other 
+% sources); moving to biblatex instead.
+\RequirePackage[
+    backend=biber,
+    style=authoryear-icomp,
+    sortlocale=es_ES,
+    natbib=true,
+    url=true,
+    doi=true,
+    eprint=false
+]{biblatex}
 %---------------------------------------------------------------------------
 
 %---------------------------------------------------------------------------
@@ -108,13 +119,12 @@
 %---------------------------------------------------------------------------
 %%% PDF OPTIONS (HYPERREFERENCES)
 \RequirePackage[%
-colorlinks=true,
-linkcolor=black,
-urlcolor=blue,
-citecolor=blue,
-breaklinks=true,
-backref=section,
-pdfpagelabels
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    citecolor=blue,
+    breaklinks=true,
+    pdfpagelabels
 ]{hyperref}	% for colored links (urls and table of contents)
 %---------------------------------------------------------------------------
 
@@ -129,8 +139,8 @@ pdfpagelabels
 
 \newcommand{\insertWatermark}[1]{%
     \AddToShipoutPicture{%
-        \setlength{\@tempdimb}{.34\paperwidth}%
-        \setlength{\@tempdimc}{.6\paperheight}%
+        \setlength{\@tempdimb}{.305\paperwidth}%
+        \setlength{\@tempdimc}{.61\paperheight}%
         \setlength{\unitlength}{1pt}%
         \put(\strip@pt\@tempdimb,\strip@pt\@tempdimc){%
             %\makebox(0,0){\rotatebox{45}{\textcolor[gray]{0.9}%
