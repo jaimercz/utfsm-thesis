@@ -11,28 +11,20 @@ Para usar esta plantilla tan sólo debe:
 * compilar el documento maestro `memoria.tex` (usando una consola LaTeX o su editor favorito):
 
 		$ pdflatex memoria.tex
-		$ bibtex memoria
+		$ biber memoria
 		$ pdflatex memoria.tex
 		$ pdflatex memoria.tex
 
 **NOTA:** `pdflatex` debe ejecutarse (en consola) tres veces, como se indica y en   el orden mostrado para que latex pueda construir las Tablas de Contenidos y las referencias cruzadas de la Bibliografía.
 
-**NOTA 2:** Si se encuentra en un ambiente Mac OSX o linux, puedes correr el comando desde la terminal:
-
-		$ make
-
-este cual llamara el Makefile el cual generara el pdf sin necesidad de correr los 4 comandos mencionados anteriormente. Para esto solo se debe instalar `rubber`, disponible para OSX y linux.
+O, puede ocupar el editor de su preferencia (recuerde configurarlo para usar `biber`y no `bibtex`).
 
 ### Documentación
 
 Toda la documentación está contenida en el archivo de salida (`memoria.pdf`), incluyendo información sobre las normas UTFSM empleadas para su confección.
 
 ### Acerca de la Bibliografía
-La bibliografía está contenida en el archivo `bibliography.bib`, y los estilos bibliográficos están en el archivo `thesis_utfsm.bst` (que básicamente es una castellanización de las normas APA, *American Psychological Association*).
-
-**Nota:** Las normas APA requieren que todas las entradas bibliográficas (incluyendo **webpage**) tengan un año (*year*) definido. Si al compilar ve referencias extrañas en lugar de los nombres de los autores de artículos citados, entonces lo más probable es que tenga un problema con el año de una de sus referencias.
-
-**Recomendación:** Ocupe un editor bibliográfico como Mendeley o BibDesk.
+La bibliografía está contenida en el archivo `bibliography.bib`. Esta versión ocupa `biber` en lugar de `bibtex/natbib`. Biber es más moderno y maneja además distintos idiomas para la presentación y ordenamiento de la bibliografía.
 
 ## Plataformas Soportadas
 
@@ -43,13 +35,18 @@ La plantilla en LaTeX (`memoria.tex`) fue escrita usando una codificación de ca
 
 **NOTA:** No mezcle archivos con codificaciones diferentes o los resultados no serán los esperados.
 
+### Compatibilidad con Overleaf (y otros editores en línea)
+
+Esta versión es compatible (salvo algunas advertencias) con procesadores de texto en línea como [Overleaf](https://overleaf.com), Papeeria, o Authorea.
+
 ## Contribuciones
 
 Puede hacerlas directamente en [Issues](https://github.com/jaimercz/utfsm-thesis/issues).
 
 ## Licencia
 
-> The MIT License (MIT), 2016
+> The MIT License (MIT), 2016-2022
 
+(Básicamente puede usarlo siempre que se mantenga la referencia al autor original en el código fuente).
 
-**Nota:** Las imágenes son propiedad intelectual de la Universidad Técnica Federico Santa María.
+**Nota:** Las imágenes (asociadas a la UTFSM) son propiedad intelectual de la [Universidad Técnica Federico Santa María](https://www.usm.cl).
