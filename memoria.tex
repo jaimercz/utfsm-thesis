@@ -5,8 +5,8 @@
 % Autor:
 %       Jaime C. Rubin-de-Celis <jaime@rubin-de-celis.com>
 %
-% Fecha:	
-%       $Date: 2017-10-28 11:25:21 -0300 (Sat, 28 Oct 2017) $
+% Fecha:
+%       $Date: 2022-10-20 01:05:21 -0300$
 %
 % Versión:
 %       1.1
@@ -25,11 +25,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[
-	12pt,			% Tamaño de fuente (11pt)
+	11pt,			% Tamaño de fuente (11pt)
 	letterpaper,	% Tamaño del papel (carta)
 ]{thesis_utfsm}
 
-\usepackage{thesis_utfsm}   % Archivo de estilos 
+\usepackage{thesis_utfsm}   % Archivo de estilos
 
 \input{config}              % Configuración (Título, autor, etc.)
                             % Usted debe modificar este documento
@@ -42,6 +42,7 @@
 \usepackage{blindtext}      % automated text generation
 \usepackage{lipsum}         % automated text generation
 
+\addbibresource{bibliography.bib}
 
 %---------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -66,21 +67,21 @@
 \dedicatoria{%
     \emph{\huge A mi familia \dots}
 
-    \vspace*{2cm}[Puede ocupar este espacio para escribir una 
-    dedicatoria (opcional). Revise el archivo maestro
-    \inlinecode{memoria.tex}]
+    \vspace*{2cm} Puede ocupar este espacio para escribir una
+    dedicatoria (opcional). [Revise el archivo maestro
+    \inlinecode{memoria.tex} para modificar / eliminar esta sección.]
 }%
 
 \section*{(AGRADECIMIENTOS) [Título es opcional] }
-\insertFile[empty]{agradecimientos} % Insertar 'sections/agradecimientos.tex'.
+\insertFile[empty]{agradecimientos} % Insertar 'includes/agradecimientos.tex'.
 
 
 \section*{RESUMEN EJECUTIVO}
-\insertFile[plain]{resumen}     % Insertar 'sections/resumen.tex'.
+\insertFile[plain]{resumen}     % Insertar 'includes/resumen.tex'.
 
 
 \section*{ABSTRACT}
-\insertFile[plain]{abstract}    % Insertar 'sections/abstract.tex'.
+\insertFile[plain]{abstract}    % Insertar 'includes/abstract.tex'.
 
 
 %%% TABLA DE CONTENIDOS / FIGURAS / CUADROS
@@ -109,8 +110,9 @@
 %	Bibliografía
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{spacing}{1}      % Single space for Bibliography
-    \bibliographystyle{thesis_utfsm}    % Alternative 'apalike'
-    \bibliography{bibliography}         % Archivo 'bibliography.bib'
+    % \bibliographystyle{thesis_utfsm}    % Alternative 'apalike'
+    % \bibliography{bibliography}         % Archivo 'bibliography.bib'
+    \printbibliography
 \end{spacing}
 
 
