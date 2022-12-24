@@ -133,7 +133,7 @@ Para una referencia completa sobre \LaTeX{}, recomendamos el libro de \cite{Lamp
 También puede revisar \citet{Roberts05}, \citet{Oetiker06}, y \citet{Mittelbach04}.
 
 \subsection{Figuras}
-La siguiente es una figura basada en el archivo \inlinecode{figures/logoind.png}. En este caso, la descripción de la figura va en la parte inferior (ver \autoref{fig:logoind2}).
+La siguiente es una figura basada en el archivo \inlinecode{figures/logoind.png}. En este caso, la descripción de la figura va en la parte inferior (ver \autoref{fig:logoind}).
 
 % Inclusión de Figuras
 \begin{figure}[ht!]
@@ -141,13 +141,13 @@ La siguiente es una figura basada en el archivo \inlinecode{figures/logoind.png}
 \includegraphics[width=.3\textwidth]{figures/logoind.png}
 \caption[Logotipo Departamento de Industrias]{Logotipo Departamento de Industrias\\
 {\scriptsize (Fuente: Departamento de Industrias)}}
-\label{fig:logoind2}
+\label{fig:logoind}
 \end{figure}
 
-La forma de incorporar la \autoref{fig:logoind2} se muestra a continuación:
+La forma de incorporar la \autoref{fig:logoind} se muestra a continuación:
 
 
-\begin{Verbatim}[frame=lines, label=Incorporar \autoref{fig:logoind2}
+\begin{Verbatim}[frame=lines, label=Incorporar \autoref{fig:logoind}
 				, fontsize=\footnotesize, numbers=left
 				, baselinestretch=1
 				, formatcom=\color{gray}]
@@ -156,11 +156,11 @@ La forma de incorporar la \autoref{fig:logoind2} se muestra a continuación:
 \includegraphics[width=.4\textwidth]{figures/logoind.png}
 \caption[Logotipo Departamento de Industrias]{Logotipo Departamento de Industrias\\
 {\scriptsize (Fuente: Departamento de Industrias)}}
-\label{fig:logoind2}
+\label{fig:logoind-demo}
 \end{figure}
 \end{Verbatim}
 
-Otra forma de incorporar figuras es mediante un \inlinecode{float}. En este caso, la figura es incorporada como una imagen ``flotante'' a un costado del texto  (ver Figura \autoref{fig:logousm_float}).
+Otra forma de incorporar figuras es mediante un \inlinecode{float}. En este caso, la figura es incorporada como una imagen ``flotante'' a un costado del texto  (ver Figura \autoref{fig:logousm}).
 
 \begin{wrapfigure}{o}{.3\textwidth}
     \vspace{-20pt}
@@ -169,7 +169,7 @@ Otra forma de incorporar figuras es mediante un \inlinecode{float}. En este caso
             \includegraphics[width=.25\columnwidth]{figures/logousm.png}
             \vspace{-10pt}
             \caption{Logotipo USM (Float)}
-            \label{fig:logousm_float}
+            \label{fig:logousm}
         \end{center}
     \end{spacing}
     \vspace{-10pt}
@@ -179,7 +179,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibu
 
 
 
-\begin{Verbatim}[frame=lines, label=\autoref{fig:logousm_float}
+\begin{Verbatim}[frame=lines, label=\autoref{fig:logousm}
 				, fontsize=\footnotesize, numbers=left
 				, baselinestretch=1
 				, formatcom=\color{gray}]
@@ -190,7 +190,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibu
             \includegraphics[width=.35\columnwidth]{figures/logousm.png}
             \vspace{-10pt}
             \caption{Logotipo USM (Float)}
-            \label{fig:logousm_float}
+            \label{fig:logousm-demo}
         \end{center}
     \end{spacing}
     \vspace{-10pt}
@@ -222,14 +222,14 @@ La siguiente es una tabla o cuadro básica (ver \autoref{tbl:temperaturas}). Not
     \end{tabularx}
 \end{table}
 
-\begin{Verbatim}[frame=lines, label=\autoref{fig:logousm_float} Alternative
+\begin{Verbatim}[frame=lines, label=\autoref{tbl:temperaturas} Alternative
 				, fontsize=\footnotesize, numbers=left
 				, baselinestretch=1
 				, formatcom=\color{gray}]
 
 \begin{table}[h!]
     \caption[Ejemplo: Tabla de Temperaturas]{Tabla de Temperaturas}
-    \label{tbl:temperaturas}
+    \label{tbl:temperaturas-demo}
     \begin{tabularx}{\linewidth}{@{} l  c  c  X @{}}
         \toprule
         \textbf{\textsc{Day}} &  \textbf{\textsc{Min Temp}} 
@@ -274,7 +274,7 @@ En caso de tener tablas muy grandes, o si necesita una tabla rotada, puedes ocup
 \begin{sidewaystable}
     \centering
     \caption[Ejemplo: Rotación de Tablas]{Rotación de Tablas}
-    \label{tbl:example-sidewaystable}
+    \label{tbl:example-sidewaystable-demo}
     \begin{tabularx}{\columnwidth}{@{}XX@{}}
         \toprule
         \textbf{Column 1} & \textbf{Column 2}\\
@@ -390,65 +390,6 @@ Los packetes Ti\emph{k}Z y PGF ofrecen alternativas para la creación de gráfic
 \end{figure}
 
 
-\begin{figure}[ht!]
-\centering
-\usetikzlibrary{chains,fit,shapes}
-\begin{tikzpicture}
-\tikzstyle{every path}=[very thick]
-
-\edef\sizetape{0.7cm}
-\tikzstyle{tmtape}=[draw,minimum size=\sizetape]
-\tikzstyle{tmhead}=[arrow box,draw,minimum size=.5cm,arrow box
-arrows={east:.25cm, west:0.25cm}]
-
-%% Draw TM tape
-\begin{scope}[start chain=1 going right,node distance=-0.15mm]
-    \node [on chain=1,tmtape,draw=none] {$\ldots$};
-    \node [on chain=1,tmtape] {};
-    \node [on chain=1,tmtape] (input) {b};
-    \node [on chain=1,tmtape] {b};
-    \node [on chain=1,tmtape] {a};
-    \node [on chain=1,tmtape] {a};
-    \node [on chain=1,tmtape] {a};
-    \node [on chain=1,tmtape] {a};
-    \node [on chain=1,tmtape] {};
-    \node [on chain=1,tmtape,draw=none] {$\ldots$};
-    \node [on chain=1] {\textbf{Input/Output Tape}};
-\end{scope}
-
-%% Draw TM Finite Control
-\begin{scope}
-[shift={(3cm,-5cm)},start chain=circle placed {at=(-\tikzchaincount*60:1.5)}]
-\foreach \i in {q_0,q_1,q_2,q_3,\ddots,q_n}
-	\node [on chain] {$\i$};
-
-% Arrow to current state
-\node (center) {};
-\draw[->] (center) -- (circle-2);
-
-\node[rounded corners,draw=black,thick,fit=(circle-1) (circle-2) (circle-3) 
-      (circle-4) (circle-5) (circle-6),
-			label=below:\textbf{Finite Control}] (fsbox)
-		{};
-\end{scope}
-
-%% Draw TM head below (input) tape cell
-\node [tmhead,yshift=-.3cm] at (input.south) (head) {$q_1$};
-
-%% Link Finite Control with Head
-\path[->,draw] (fsbox.north) .. controls (4.5,-1) and (0,-2) .. node[right] 
-			(headlinetext)
- 			{} 
-			(head.south);
-\node[xshift=3cm] at (headlinetext)  
-			{\begin{tabular}{c} 
-				\textbf{Reading and Writing Head} \\  
-				\textbf{(moves in both directions)} 
-			 \end{tabular}};
-
-\end{tikzpicture}
-\caption [Diagrama de la Máquina de Türing]{Diagrama de la Máquina de Türing\\ {\scriptsize (Fuente: \url{www.texample.net})}}
-\end{figure}
 
 
 \begin{figure}[ht!]

@@ -1,12 +1,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	Clase (LateX class) para Memorias y Tesis, UTFSM, Chile
+%	Plantilla para Memorias y Tesis, UTFSM, Chile
 %	=============================================
 %
 % Autor:
 %       Jaime C. Rubin-de-Celis <jaime@rubin-de-celis.com>
 %
 % Fecha:
-%       $Date: 2017-10-28 11:25:21 -0300 (Sat, 28 Oct 2017) $
+%       $Date: 2022-10-20 01:05:21 -0300$
 %
 % Versión:
 %       1.1
@@ -30,7 +30,7 @@
 
 %---------------------------------------------------------------------------
 %%% LANGUAGE: Spanish
-\RequirePackage[spanish,es-tabla,english]{babel}
+\RequirePackage[spanish,es-tabla]{babel}
 \addto\shorthandsspanish{\spanishdeactivate{~<>}}
 %---------------------------------------------------------------------------
 
