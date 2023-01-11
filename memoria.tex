@@ -6,13 +6,13 @@
 %       Jaime C. Rubin-de-Celis <jaime@rubin-de-celis.com>
 %
 % Fecha:
-%       $Date: 2022-10-20 01:05:21 -0300$
+%       $Date: 2023-01-11 01:05:21 -0300$
 %
 % Versión:
-%       1.1
+%       2.0
 %
 % Licencia:
-%       Copyright (c) 2012-2017, Jaime C. Rubin-de-Celis
+%       Copyright (c) 2012-2023, Jaime C. Rubin-de-Celis
 %       The MIT License
 %
 % Nota:
@@ -25,24 +25,26 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[
-	11pt,			% Tamaño de fuente (11pt)
-	letterpaper,	% Tamaño del papel (carta)
+	11pt,			        % Tamaño de fuente (11pt)
+	letterpaper,	        % Tamaño del papel (carta)
 ]{thesis_utfsm}
 
 \usepackage{thesis_utfsm}   % Archivo de estilos
 
 \input{config}              % Configuración (Título, autor, etc.)
-                            % Usted debe modificar este documento
+                            % Modificar este documento
                             % para actualizar la portada.
 
 \makeatother                % Important! (Do not delete or move!)
-
 
 % Generadores de texto aleatorio (se pueden eliminar)
 \usepackage{blindtext}      % automated text generation
 \usepackage{lipsum}         % automated text generation
 
-\addbibresource{bibliography.bib}
+% Archivo de bibiliografía
+\addbibresource{bibliography.bib}   % Reemplazar por su bibligrafía
+
+
 
 %---------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -52,11 +54,13 @@
 
 \pagestyle{plain}           % Headers & Footers (Roman numbers)
 
+
 %---------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	Portada
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \insertFile{portada}        % Insertar archivo 'sections/portada.tex'.
+
 
 %---------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -64,6 +68,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \frontmatter                % Important! (Do not delete or move!)
 
+
+%---------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Dedicatoria (Opcional)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \dedicatoria{%
     \emph{\huge A mi familia \dots}
 
@@ -72,23 +81,30 @@
     \inlinecode{memoria.tex} para modificar / eliminar esta sección.]
 }%
 
+
+%---------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Agradecimientos (Opcional)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{(AGRADECIMIENTOS) [Título es opcional] }
 \insertFile[empty]{agradecimientos} % Insertar 'includes/agradecimientos.tex'.
 
 
 \section*{RESUMEN EJECUTIVO}
-\insertFile[plain]{resumen}     % Insertar 'includes/resumen.tex'.
+\insertFile[plain]{resumen}         % Insertar 'includes/resumen.tex'.
 
 
 \section*{ABSTRACT}
-\insertFile[plain]{abstract}    % Insertar 'includes/abstract.tex'.
+\insertFile[plain]{abstract}        % Insertar 'includes/abstract.tex'.
 
 
-%%% TABLA DE CONTENIDOS / FIGURAS / CUADROS
+%---------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Tabla de Contenidos, Tabla de Cuadros, Tabla de Figuras, etc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{spacing}{1}      % Single space for TOC, LOF and LOT
     \tableofcontents\listoftables\listoffigures
 \end{spacing}
-
 
 
 %---------------------------------------------------------------------------
@@ -99,23 +115,23 @@
 
 \pagestyle{fancy}       % Headers & Footers (Arabic numbers)
 
-% Incluir Capítulos
+% Incluir/Eliminar Capítulos
 \input{includes/capitulo01}
 \input{includes/capitulo02}
 \input{includes/capitulo03}
 %...                    % Agregar aquí más capítulos
 
 
+%---------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	Bibliografía
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{spacing}{1}      % Single space for Bibliography
-    % \bibliographystyle{thesis_utfsm}    % Alternative 'apalike'
-    % \bibliography{bibliography}         % Archivo 'bibliography.bib'
     \printbibliography
 \end{spacing}
 
 
+%---------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	Anexos (Opcional)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -6,13 +6,13 @@
 %       Jaime C. Rubin-de-Celis <jaime@rubin-de-celis.com>
 %
 % Fecha:
-%       $Date: 2022-10-20 01:05:21 -0300$
+%       $Date: 2023-01-11 01:05:21 -0300$
 %
 % Versión:
-%       1.1
+%       2.0
 %
 % Licencia:
-%       Copyright (c) 2012-2017, Jaime C. Rubin-de-Celis
+%       Copyright (c) 2012-2023, Jaime C. Rubin-de-Celis
 %       The MIT License
 %
 % Nota:
@@ -25,7 +25,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{thesis_utfsm}[6/6/2016 UTFSM Thesis class]
+\ProvidesClass{thesis_utfsm}[10/01/2023 UTFSM Thesis class]
 \LoadClass[oneside]{book}
 
 %---------------------------------------------------------------------------
@@ -36,16 +36,14 @@
 
 %---------------------------------------------------------------------------
 %%% BIBLIOGRAPHY
-% \RequirePackage[longnamesfirst]{natbib}
-% Natbib and bibtex are to old to recognize webpages (and other 
-% sources); moving to biblatex instead.
+% Using biber/biblatex instead of (old) natbib/bibtex.
 \RequirePackage[
     backend=biber,
     style=authoryear-icomp,
-    sortlocale=es_ES,
-    natbib=true,
-    url=true,
-    doi=true,
+    sortlocale=es_ES,       % Spanish
+    natbib=true,            % Natbib backward compatibility
+    url=true,               % Allow URLs
+    doi=true,               % Allow DOI autoreference
     eprint=false
 ]{biblatex}
 %---------------------------------------------------------------------------
@@ -61,46 +59,39 @@
 %---------------------------------------------------------------------------
 
 
-\RequirePackage[T1]{fontenc}% Important!
-\RequirePackage{geometry}
-\RequirePackage{microtype}  % Subliminal refinements
-\RequirePackage{titlesec}   % Chapter/Section Titles
-\RequirePackage{listings}   % Better looking listings
-\RequirePackage{booktabs}   % for much better looking tables
-\RequirePackage{tabularx}   % for much better looking tables (might conflict with previous)
-\RequirePackage{multirow}   % for multirow tables
-\RequirePackage{array}      % for better arrays (eg matrices) in maths
-\RequirePackage{float}      % for floating figures
+\RequirePackage[T1]{fontenc}    % Important!
+\RequirePackage{microtype}      % Subliminal refinements
+\RequirePackage{titlesec}       % Chapter/Section Titles
+\RequirePackage{listings}       % Better looking listings
+\RequirePackage{booktabs}       % for much better looking tables
+\RequirePackage{tabularx}       % for much better looking tables
+                                % (might conflict with previous!)
+\RequirePackage{multirow}       % for multirow tables
+\RequirePackage{array}          % for better arrays (eg matrices) in maths
+\RequirePackage{float}          % for floating figures
 \RequirePackage{textcomp}
-\RequirePackage{endnotes}   % notes at the end of document
-\RequirePackage{paralist}   % very flexible & customizable lists (eg. enumerate/itemize, etc.)
-\RequirePackage{framed}     % create framed boxes
-\RequirePackage{fancybox}
-\RequirePackage{verbatim}   % adds environment for commenting out blocks of text
-\RequirePackage{fancyvrb}   % fancy verbatim
+\RequirePackage{endnotes}       % notes at the end of document
+\RequirePackage{paralist}       % very flexible & customizable lists
+\RequirePackage{framed}         % create framed boxes
+\RequirePackage{fancybox}       % fancy framed boxes
+\RequirePackage{verbatim}       % adds environment for commenting out blocks
+\RequirePackage{fancyvrb}       % fancy verbatim
 \RequirePackage[parfill]{parskip}   % Frensh indentation
-\RequirePackage{wrapfig}    % flooating Figures and Tables
-\RequirePackage{xcolor}     % custom colors
-\RequirePackage{graphicx}   % graphics library
+\RequirePackage{wrapfig}        % flooating Figures and Tables
+\RequirePackage{xcolor}         % custom colors
+\RequirePackage{graphicx}       % graphics library
 \RequirePackage{subcaption}     % include more than one captioned figure/table in a single float
-                            % Important!: subfig is incompatible with subcaption
-\RequirePackage{type1cm}    % Watermarks
-\RequirePackage{eso-pic}    % Watermarks
-\RequirePackage{rotating}
-\RequirePackage{fancyhdr}   % Fancy Headers and Footers
-\RequirePackage{tikz}       % to hard to explain ;-)
+                                % Important!: subfig is incompatible with subcaption
+\RequirePackage{type1cm}        % Watermarks (TODO: will change in next version)
+\RequirePackage{eso-pic}        % Watermarks
+\RequirePackage{rotating}       % Table rotation
+\RequirePackage{fancyhdr}       % Fancy Headers and Footers
+\RequirePackage{tikz}           % to hard to explain ;-)
+                                % Important: TIKZ does not play nice when used
+                                % with multi-language (babel) configuration.
 \usetikzlibrary{arrows,positioning,fit,shapes,calc,backgrounds}
 \usetikzlibrary{decorations.pathreplacing}
-
-
-%---------------------------------------------------------------------------
-% FOOTNOTES
-% By default footnotes number are reset to 1 for each Chapter
-% This provides sequential footnotes numbering, regardless of chapter.
-\RequirePackage{chngcntr}   % Footnotes by chapter
-% NOTE: This package has to be loaded before hyperref!
-%---------------------------------------------------------------------------
-
+\RequirePackage{chngcntr}       % Footnotes by chapter
 
 
 %---------------------------------------------------------------------------

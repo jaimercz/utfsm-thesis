@@ -181,3 +181,6 @@ TSWLatexianTemp*
 
 # ctags
 tags
+.*.swp
+
+
