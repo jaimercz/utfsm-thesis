@@ -39,7 +39,7 @@
 
 % Generadores de texto aleatorio (se pueden eliminar)
 \usepackage{blindtext}      % automated text generation
-\usepackage{lipsum}         % automated text generation
+% \usepackage{lipsum}         % automated text generation
 
 % Archivo de bibiliografía
 \addbibresource{bibliography.bib}   % Reemplazar por su bibligrafía
@@ -67,6 +67,7 @@
 %	Preámbulo (Front Matter)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \frontmatter                % Important! (Do not delete or move!)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %---------------------------------------------------------------------------
@@ -119,6 +120,7 @@
 \input{includes/capitulo01}
 \input{includes/capitulo02}
 \input{includes/capitulo03}
+\input{includes/tikz}
 %...                    % Agregar aquí más capítulos
 
 
@@ -135,9 +137,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	Anexos (Opcional)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\appendix
-\input{includes/anexo}
-%...                  % Agregar más apéndices
-
+\begin{appendix}
+    \input{includes/anexo}
+    \input{includes/legacy}
+    %...                  % Agregar más apéndices
+\end{appendix}
 
 \end{document}
