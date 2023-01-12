@@ -4,20 +4,42 @@
 
 \section{Obtener el código fuente \LaTeX}
 
-Primero, por supuesto, obtener la plantilla y los archivos de apoyo desde GitHub (\url{https://github.com}):
-
+Primero, obtener la plantilla y los archivos de apoyo. Puede hacerlo desde GitHub (\hyperref[https://github.com]{https://github.com}):
 
 \inlinecode{git clone https://github.com/jaimercz/utfsm-thesis}
 
+También existe un formato para presentaciones, basado en \inlinecode{beamer} y en cumplimiento con las disposiciones de la UTFSM para el uso de su imagen corporativa, que puede obtener desde:
+
+\inlinecode{git clone https://github.com/jaimercz/utfsm-beamer}
+
+%%%%%
 \section{Configuración}
 
-La configuración básica (nombre del autor, comisión evaluadora, fecha, grado y título de la memoria o tesis) está en el archivo \inlinecode{config.tex}. Modifique ahí los parámetros básicos de este documento (que afectan la portada y los meta-datos PDF).
+La configuración básica (nombre del autor, comisión evaluadora, fecha, grado y título de la memoria o tesis) se encuentra en el archivo \inlinecode{config.tex}.
 
-\section{Compilar (primera vez)}
+Modifique en este archivo los parámetros básicos de este documento (que afectan la portada y los meta-datos PDF).
 
-Abra el documento \inlinecode{memoria.tex} con un editor de texto o editor de \LaTeX{} de su preferencia.
+\section{Modificación de contenidos}
 
-Proceda con la compilación:
+Abrir el documento maestro (\inlinecode{memoria.tex}) con un editor de texto o editor de \LaTeX{} de su preferencia, y modificar o incluir los documentos que componen su memoria.
+
+Por ejemplo, para incorporar un nuevo capítulo, simplemente puede agregarlo incorporando la siguiente línea en el documento maestro:
+
+\inlinecode{\\input\{includes/capitulo04\}}
+
+\begin{Verbatim}[frame=lines, label=\inlinecode{memoria.tex} (extracto)
+				, fontsize=\footnotesize
+				, baselinestretch=1
+				, formatcom=\color{gray}]
+% ... 
+% \input{includes/capitulo04}
+% \input{includes/capitulo05}
+% ... 
+\end{Verbatim}
+
+\section{Compilación}
+
+Compilar como todo documento \LaTeX{}.
 
 \begin{Verbatim}[frame=lines, label=Consola (Shell) o Línea de comandos
 , fontsize=\footnotesize
@@ -29,29 +51,18 @@ Proceda con la compilación:
     $ pdflatex memoria.tex
 \end{Verbatim}
 
-Si hay errores, lo más probable es que le falte alguno de las paquetes necesarios que ocupa esta plantilla.
+Si hay errores, lo más probable es que le falte alguno de las paquetes necesarios que ocupa esta plantilla\footnote{Más adelante se incluyen los paquetes necesarios; o puedo revirsarlos en \inlinecode{thesis_utfsm.cls} y/o en \inlinecode{thesis_utfsm.sty}.}.
 
-Esta version hace uso de \inlinecode{biber} en lugar de \inlinecode{natbib / bibtex}. Natbib es del año 1988, y el manejo de documentos digitales modernos no estaba contemplado entonces.
+\subsection{Bibliografía}
 
-\section{Modificación de contenidos}
+Esta versión hace uso de \inlinecode{biber} en lugar de \inlinecode{natbib / bibtex}. Natbib es del año 1988, y el manejo de documentos digitales modernos no estaba contemplado entonces.
 
+Puede revisar más sobre \inlinecode{biber} en:
+\hyperref[https://ctan.org/pkg/biber]{https://ctan.org/pkg/biber}.
 
-Abrir el documento maestro (\inlinecode{memoria.tex}) y modificar o incluir los documentos que componen su memoria.
+En el archivo maestro puede cambiar/agregar bibligrafía (archivo \inlinecode{bibliography.bib}).
 
-Por ejemplo, para incorporar un nuevo capítulo, simplemente puede agregarlo incorporando la siguiente línea en el documento maestro:
-
-\inlinecode{\\input\{includes/capitulo04\}}
-
-\begin{Verbatim}[frame=lines, label=\inlinecode{memoria.tex} (extracto)
-				, fontsize=\footnotesize
-				, baselinestretch=1
-				, formatcom=\color{gray}]
-% \input{includes/capitulo04}
-% \input{includes/capitulo05}
-%...              % Agregar aquí más capítulos
-\end{Verbatim}
-
-\section{Codificación de caracteres}
+\subsection{Codificación de caracteres}
 
 Todos los archivos \inlinecode{*.tex} de esta plantilla han sido preparados ocupando la codificación de caracteres por defecto \emph{unicode} (UTF-8). Windows (y algunas versiones de OSX) ocupan otro tipo de codificación (ej. \emph{Windows-1252} o \emph{Mac Roman}).
 
@@ -71,11 +82,10 @@ Si deseas ocupar esta plantilla y encuentras problemas con los caracteres acentu
 
 \vspace{10mm}
 \begin{framed}
-    \textbf{Recuerda:} Mezclar documentos de distintas codificaciones puede generarte muchos problemas al momento de compilar.  
+    \textbf{Recuerde:} Mezclar documentos de distintas codificaciones puede generarte muchos problemas al momento de compilar.  
 \end{framed}
 
-\newpage
-\section{Requisitos}
+\subsection{Requisitos (Paquetes)}
 Los paquetes que se ocupan y son indispensables para la generación este documento están contenidos en el documento de clase \inlinecode{thesis_utfsm.cls}.
 
 Para que funcione correctamente se requiere tener instaladas (como mínimo) las siguientes extensiones \LaTeX{}:
@@ -83,56 +93,62 @@ Para que funcione correctamente se requiere tener instaladas (como mínimo) las 
 				, fontsize=\footnotesize
 				, baselinestretch=1
 				, formatcom=\color{gray}]
-geometry    % Márgenes y tamaño de páginas
-biblatex    % Bibliografía
-fontenc     % Codificación de Caracteres
-inputenc    % Métodos de entrada (acentos)
-fancyhdr    % Encabezados 'Fancy'
-chngcntr    % Formatos de Pie de Página
-booktabs    % Tablas
-tabularx    % Tablas
-multirow    % Tablas con multi-columnas / multi-filas
 array       % Matrices
-float       % Imágenes Flotantes
-textcomp    % Símbolos de uso común
-endnotes    % Notas finales del documento
-paralist    % Mejores Listados
-listings    % Mejores Listados
-framed      % Marcos
-fancybox    % Marcos 'Fancy'
-verbatim    % Código Fuente
-fancyvrb    % Código Fuente 'Fancy'
-wrapfig     % Figuras flotantes
-xcolor      % Colores personalizados
-graphix     % Mejor inclusión de figuras
-subfig      % Figuras con múltiples leyendas
-tikz        % Diagramas vectoriales
-caption     % Mejores leyendas para figuras y tablas
-tocbibind   % Bibliografía en la Tabla de Contenidos
-rotating    % Rotación de Tablas
 asmmath     % Notación ciéntifica / matemática
 asmsymb     % Símbolos matemáticos y letras griegas
-txfonts     % Times New Roman (para sistemas distintos de Windows)
+babel       % Español
+biblatex    % Bibliografía
+booktabs    % Tablas
+caption     % Mejores leyendas para figuras y tablas
+chngcntr    % Formatos de Pie de Página
+endnotes    % Notas finales del documento
+eso-pic     % Marcas de agua
+fancybox    % Marcos 'Fancy'
+fancyhdr    % Encabezados 'Fancy'
+fancyvrb    % Código Fuente 'Fancy'
+float       % Imágenes Flotantes
+fontenc     % Codificación de Caracteres
+framed      % Marcos
+geometry    % Márgenes y tamaño de páginas
+graphix     % Mejor inclusión de figuras
+hyperref    % Referencias Web
+inputenc    % Métodos de entrada (acentos)
+listings    % Mejores Listados
 microtype   % Mejoras subliminales en el uso de fuentes
+multirow    % Tablas con multi-columnas / multi-filas
+paralist    % Mejores Listados
 parskip     % Separación entre párrafos
+rotating    % Rotación de Tablas
+setspace    % Interlineado
+subcaption  % Figuras con múltiples leyendas
+tabularx    % Tablas
+textcomp    % Símbolos de uso común
+tikz        % Diagramas vectoriales
+tocbibind   % Bibliografía en la Tabla de Contenidos
+txfonts     % Times New Roman (para sistemas distintos de Windows)
+type1cm     % Marcas de agua
+verbatim    % Código Fuente
+wrapfig     % Figuras flotantes
+xcolor      % Colores personalizados
 \end{Verbatim}
 
 La mayoría de las distribuciones \LaTeX{} traen estos paquetes por defecto, sin embargo, en Windows es posible que deba instalar algunos de ellos si ha instalado el archivo básico de MikTeX.
 
 
-\newpage
 %%%%%
-\section{Diagramación}
-Este documento fue realizado usando \LaTeX{} (\citet{latex:whatis}), aunque puede fácilmente ser exportado a LyX (\citeauthor{lyx}). Para ver como transformarlo a Lyx, puede revisar el Wiki (\citeauthor{wikilyx}).
+\subsection{Diagramación}
+Este documento fue realizado usando \LaTeX{} (\citet{latex:whatis}), aunque puede fácilmente ser exportado a LyX (\citeauthor{lyx})\footnote{Para ver como transformarlo a Lyx, puede revisar el Wiki (\citeauthor{wikilyx}).}.
+También puede ser ocupado en Overleaf (\hyperref[https://overleaf.com]{https://overleaf.com}).
 
 Usted necesitará un compilador de \LaTeX. Los más comúnmente ocupados son \citeauthor{miktex} (Windows) y \citeauthor{mactex} (Apple); Sistemas *nix (incluyendo linux) traen \TeX{} por defecto.
 
 Para una referencia completa sobre \LaTeX{}, recomendamos el libro de \cite{Lamport94}; aunque para solucionar problemas específicos, su mejor aliado es Internet.
 
-% Other Author (Included only in Bibliography)
 También puede revisar \citet{Roberts05}, \citet{Oetiker06}, y \citet{Mittelbach04}\footnote{El administrador de bibliografía ha cambiado, por favor, revisar documentos maestros.}.
 
-\subsection{Figuras}
+En el \autoref{annex:code} encontrará la formade inclusión de figuras y tablas en este documento.
+
+\subsubsection{Figuras}
 La siguiente es una figura basada en el archivo \inlinecode{figures/logoind.png}. En este caso, la descripción de la figura va en la parte inferior (ver \autoref{fig:logoind}).
 
 % Inclusión de Figuras
@@ -144,61 +160,36 @@ La siguiente es una figura basada en el archivo \inlinecode{figures/logoind.png}
 \label{fig:logoind}
 \end{figure}
 
-La forma de incorporar la \autoref{fig:logoind} se muestra a continuación:
 
+\subsubsection{Figuras Flotantes}
 
-\begin{Verbatim}[frame=lines, label=Incorporar \autoref{fig:logoind}
-				, fontsize=\footnotesize, numbers=left
-				, baselinestretch=1
-				, formatcom=\color{gray}]
-\begin{figure}[h]
-\centering
-\includegraphics[width=.4\textwidth]{figures/logoind.png}
-\caption[Logotipo Departamento de Industrias]{Logotipo Departamento de Industrias\\
-{\scriptsize (Fuente: Departamento de Industrias)}}
-\label{fig:logoind-demo}
-\end{figure}
-\end{Verbatim}
+Otra forma de incorporar figuras es mediante un \emph{float}. En este caso, la figura es incorporada como una imagen ``flotante'' a un costado del texto  (ver \autoref{fig:emblem-float}).
 
-Otra forma de incorporar figuras es mediante un \inlinecode{float}. En este caso, la figura es incorporada como una imagen ``flotante'' a un costado del texto  (ver Figura \autoref{fig:logousm}).
-
-\begin{wrapfigure}{o}{.3\textwidth}
-    \vspace{-20pt}
-    \begin{spacing}{1}
-        \begin{center}
-            \includegraphics[width=.25\columnwidth]{figures/logousm.png}
-            \vspace{-10pt}
-            \caption{Logotipo USM (Float)}
-            \label{fig:logousm}
-        \end{center}
-    \end{spacing}
-    \vspace{-10pt}
-\end{wrapfigure}
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy eget, consectetuer id, vulputate a, magna. Donec vehicula augue eu neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla. Curabitur auctor semper nulla. Donec varius orci eget risus. Duis nibh mi, congue eu, accumsan eleifend, sagittis quis, diam. Duis eget orci sit amet orci dignissim rutrum.
-
-
-
-\begin{Verbatim}[frame=lines, label=\autoref{fig:logousm}
-				, fontsize=\footnotesize, numbers=left
-				, baselinestretch=1
-				, formatcom=\color{gray}]
 \begin{wrapfigure}{o}{.4\textwidth}
     \vspace{-20pt}
     \begin{spacing}{1}
         \begin{center}
-            \includegraphics[width=.35\columnwidth]{figures/logousm.png}
+            \includegraphics[width=.35\columnwidth]{figures/escudo-utfsm.png}
             \vspace{-10pt}
-            \caption{Logotipo USM (Float)}
-            \label{fig:logousm-demo}
+            \caption{Escudo UTFSM (Flotante)}
+            \label{fig:emblem-float}
         \end{center}
     \end{spacing}
     \vspace{-10pt}
 \end{wrapfigure}
-\end{Verbatim}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae sollicitudin diam. Nunc feugiat ipsum mauris, in congue massa consequat eu. Aliquam fringilla, elit vel euismod bibendum, purus sapien convallis eros, eu porta enim massa vitae turpis. Fusce sagittis mollis pretium. Suspendisse volutpat sem non urna molestie, sit amet dignissim libero tincidunt. Integer vitae diam eget ipsum ornare gravida. Cras porta arcu odio, quis faucibus purus hendrerit eu.
+
+Aenean non sapien fermentum, tristique enim eget, cursus felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc libero enim, egestas ut laoreet sed, consequat tincidunt ex. Integer mattis turpis a lacus consectetur ultricies. Nam viverra imperdiet arcu, non eleifend ligula sollicitudin sit amet. Suspendisse ac sollicitudin ante, at ornare lacus. Donec placerat turpis ac quam molestie, eget lacinia justo tempor. Duis porttitor congue justo, sodales laoreet erat fringilla id. Duis erat velit, lacinia at nibh ac, volutpat semper arcu. Vivamus vitae lacus ut tellus ultrices elementum.
+
+Praesent at ornare risus, sit amet finibus dolor. Aliquam vulputate tempor magna vitae varius. Vivamus vitae metus eget leo condimentum accumsan. Fusce commodo quis ipsum tincidunt hendrerit. Quisque et purus eu lectus auctor malesuada. Curabitur tincidunt finibus turpis, quis luctus erat rhoncus id. In ac bibendum tellus, et rhoncus velit. Donec vestibulum elementum augue, quis finibus ante finibus elementum. In enim enim, eleifend nec rutrum in, molestie non lacus. Ut venenatis euismod maximus. Mauris quis elementum dui. Ut massa libero, volutpat in elementum a, blandit nec ipsum.
+
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras lobortis ante erat. Pellentesque a condimentum dui. Ut placerat ipsum eu orci tempus placerat. In tincidunt a dolor non euismod. Vestibulum lacinia mattis lacinia. Aenean sapien enim, facilisis eget lacus volutpat, eleifend mollis odio. Sed condimentum convallis erat ac venenatis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum dapibus egestas consequat. Pellentesque eu purus non massa maximus laoreet. Praesent fermentum nibh id convallis sagittis. Sed feugiat congue nunc, quis luctus justo blandit sit amet. Ut tempor semper metus sit amet luctus.
+
+Nunc dui quam, fringilla non commodo vitae, ultrices nec nibh. Pellentesque vulputate ipsum leo, a egestas velit porttitor eget. Quisque lacinia mi id mi aliquam, vel iaculis est viverra. Nam commodo felis et nibh finibus malesuada. Mauris commodo consectetur varius. Donec posuere porta lectus a ullamcorper. Mauris nec dolor quis felis congue fringilla id sed tortor. Nunc quis semper mi. Suspendisse ut varius dolor, quis consequat nisi. Etiam sit amet feugiat risus. Curabitur tincidunt turpis eget consectetur tempus. Donec tincidunt lorem non massa egestas molestie. Nullam viverra sodales tempor. Sed convallis sed est non semper. Donec vitae aliquam eros. 
 
 
-\subsection{Tablas}
+\subsubsection{Tablas}
 
 La siguiente es una tabla o cuadro básica (ver \autoref{tbl:temperaturas}). Notar las referencias cruzadas y el título de la tabla en la parte superior.
 
@@ -221,244 +212,4 @@ La siguiente es una tabla o cuadro básica (ver \autoref{tbl:temperaturas}). Not
         \bottomrule
     \end{tabularx}
 \end{table}
-
-\begin{Verbatim}[frame=lines, label=\autoref{tbl:temperaturas} Alternative
-				, fontsize=\footnotesize, numbers=left
-				, baselinestretch=1
-				, formatcom=\color{gray}]
-
-\begin{table}[h!]
-    \caption[Ejemplo: Tabla de Temperaturas]{Tabla de Temperaturas}
-    \label{tbl:temperaturas-demo}
-    \begin{tabularx}{\linewidth}{@{} l  c  c  X @{}}
-        \toprule
-        \textbf{\textsc{Day}} &  \textbf{\textsc{Min Temp}} 
-        & \textbf{\textsc{Max Temp}} & \textbf{\textsc{Summary}}\\
-        \hline\hline
-        Monday & 11C & 22C & A clear day with lots of sunshine.
-        However, the strong breeze will bring down the temperatures. \\ \hline
-        Tuesday & 9C & 19C & Cloudy with rain, across many northern regions. Clear spells
-        across most of Scotland and Northern Ireland,
-        but rain reaching the far northwest. \\ \hline
-        Wednesday & 10C & 21C & Rain will still linger for the morning.
-        Conditions will improve by early afternoon and continue
-        throughout the evening. \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
-\end{Verbatim}
-
-
-
-\subsubsection{Rotación de Tablas}
-En caso de tener tablas muy grandes, o si necesita una tabla rotada, puedes ocupar \inlinecode{sidewaystable} (\autoref{tbl:example-sidewaystable}).
-\begin{sidewaystable}
-    \centering
-    \caption[Ejemplo: Rotación de Tablas]{Rotación de Tablas}
-    \label{tbl:example-sidewaystable}
-    \begin{tabularx}{\columnwidth}{@{}XX@{}}
-        \toprule
-        \textbf{Column 1} & \textbf{Column 2}\\
-        \hline
-        \hline
-        Second First & Second Second\\
-        \blindtext & \blindtext\\
-        \bottomrule
-    \end{tabularx}
-\end{sidewaystable}
-
-\begin{Verbatim}[frame=lines, label=\autoref{tbl:example-sidewaystable} Tabla Rotada
-, fontsize=\footnotesize, numbers=left
-, baselinestretch=1
-, formatcom=\color{gray}]
-\begin{sidewaystable}
-    \centering
-    \caption[Ejemplo: Rotación de Tablas]{Rotación de Tablas}
-    \label{tbl:example-sidewaystable-demo}
-    \begin{tabularx}{\columnwidth}{@{}XX@{}}
-        \toprule
-        \textbf{Column 1} & \textbf{Column 2}\\
-        \hline
-        \hline
-        Second First & Second Second\\
-        \blindtext & \blindtext\\
-        \bottomrule
-    \end{tabularx}
-\end{sidewaystable}
-\end{Verbatim}
-
-
-\subsection{Opciones Avanzadas para Gráficos}
-
-Los packetes Ti\emph{k}Z y PGF ofrecen alternativas para la creación de gráficos con las más diversas formas y opciones. Para ver opciones consultar \href{http://www.texample.net/tikz/}{www.texample.net/tikz/}.
-
-
-\newcommand{\MonetaryLevel}{Monetary level}
-\newcommand{\RealLevel}{Real level}
-\newcommand{\Firms}{Firms}
-\newcommand{\Households}{Households}
-\newcommand{\Banks}{Banks}
-\newcommand{\Commodities}{Commodities}
-\newcommand{\LaborPower}{Labor power}
-\newcommand{\Wages}{Wages}
-\newcommand{\Consumption}{Consumption}
-\newcommand{\Credits}{Credits}
-\newcommand{\Withdrawals}{Withdrawals}
-\newcommand{\Deposits}{Deposits}
-\newcommand{\Repayments}{Repayments}
-
-\newcommand{\yslant}{0.5}
-\newcommand{\xslant}{-0.6}
-
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[scale=1,every node/.style={minimum size=1cm},on grid]
-
-	% Real level
-	\begin{scope}[
-		yshift=-120,
-		every node/.append style={yslant=\yslant,xslant=\xslant},
-		yslant=\yslant,xslant=\xslant
-	] 
-		% The frame:
-		\draw[black, dashed, thin] (0,0) rectangle (7,7); 
-		% Agents:
-		\draw[fill=red]  
-			(5,2) circle (.1) % Firms
-			(2,2) circle (.1); % Households
-		% Flows:
-		\draw[-latex,thin] 
-			(2,1.8) to[out=-90,in=-90] (5,1.8); % Labour Powers
-		\draw[-latex,thin]
-			(5,2.2) to[out=90,in=90] (2,2.2); % Wages
-		 % Labels:
-		\fill[black]
-			(0.5,6.5) node[right, scale=.7] {\RealLevel}	
-			(5.1,1.9) node[right,scale=.7]{\textbf{\Firms}}
-			(1.9,1.9) node[left,scale=.7]{\textbf{\Households}}
-			(2.2,3) node [scale=.6, rotate=40] {\Commodities} 
-			(4.8,1) node [scale=.6, rotate=40] {\LaborPower};	
-	\end{scope}
-	
-	% 2 vertical lines for linking agents on the 2 levels
-	\draw[ultra thin](3.8,4) to (3.8,-0.32);
-	\draw[ultra thin](.8,2.4) to (.8,-1.8);
-	
-	% Monetary level
-	\begin{scope}[
-		yshift=0,
-		every node/.append style={yslant=\yslant,xslant=\xslant},
-		yslant=\yslant,xslant=\xslant
-	]
-		% The frame:
-		\fill[white,fill opacity=.75] (0,0) rectangle (7,7); % Opacity
-		\draw[black, dashed, thin] (0,0) rectangle (7,7); 
-		 % Agents:
-		\draw [fill=red]
-			(5,2) circle (.1) % Firms
-			(2,2) circle (.1) % Households
-			(3.5,5) circle (.1); % Banks
-		 % Monetary Flows:
-		\draw[-latex, thin]
-			(3.65,5.1) to[out=30,in=30] (5.15,2.1); % Credits
-		\draw[-latex, thin]
-			(5,1.8) to[out=-90,in=-90] (2,1.8); % Wages
-		\draw[-latex, thin]
-			(1.9,2.1) to[out=150,in=150] (3.4,5.1);  % Deposits
-		\draw[-latex, thin]
-			(3.6,4.9) to[out=-30,in=-30] (2.1,1.9); % Withdrawals
-		\draw[-latex, thin]
-			(2,2.2) to[out=90,in=90] (5,2.2); % Consumption
-		\draw[-latex, thin]
-			(4.85,1.9) to[out=210,in=210] (3.35,4.9) ; % Repayments
-		 % Labels:
-		\fill[black]
-			(0.5,6.5) node[right, scale=.7] {\MonetaryLevel}
-			(5.1,1.9) node[right,scale=.7]{\textbf {\Firms}}
-			(1.9,1.9) node[left,scale=.7]{\textbf {\Households}}
-			(3.5,5.1) node[above,scale=.7]{\textbf {\Banks}}
-			(5.5,2.8) node [above, scale=.6, rotate=-100] {\Credits}
-			(2.6,1.3) node [above, scale=.6, rotate=-10] {\Withdrawals}
-			(2.9,4.25) node [above, scale=.6, rotate=50] {\Repayments}
-			(2.6,5) node [above, scale=.6, rotate=25] {\Deposits}
-			(4.7,2.9) node [above, scale=.6, rotate=-60] {\Consumption}
-			(2.3,1.3) node [below, scale=.6, rotate=-40] {\Wages}; 
-	\end{scope} 
-\end{tikzpicture}
-\caption[Gráficos Avanzados con Tikz]{Gráficos Avanzados con Tikz\\ {\scriptsize (Fuente: \url{www.texample.net})}}
-\label{fig:tikz}
-\end{figure}
-
-
-
-
-\begin{figure}[ht!]
-\centering
-% Styles
-\tikzstyle{load}   = [ultra thick,-latex]
-\tikzstyle{stress} = [-latex]
-\tikzstyle{dim}    = [latex-latex]
-\tikzstyle{axis}   = [-latex,black!55]
-
-% Drawing Views
-\tikzstyle{isometric}=[x={(0.710cm,-0.410cm)},y={(0cm,0.820cm)},z={(-0.710cm,-0.410cm)}]
-\tikzstyle{dimetric} =[x={(0.935cm,-0.118cm)},y={(0cm,0.943cm)},z={(-0.354cm,-0.312cm)}]
-\tikzstyle{dimetric2}=[x={(0.935cm,-0.118cm)},z={(0cm,0.943cm)},y={(+0.354cm,+0.312cm)}]
-\tikzstyle{trimetric}=[x={(0.926cm,-0.207cm)},y={(0cm,0.837cm)},z={(-0.378cm,-0.507cm)}]
-
-  \begin{tikzpicture}[scale=.8]
-    \node (origin) at (0,0) {}; % shift relative baseline
-    \coordinate (O) at (2,3);
-    \draw[fill=gray!10] (O) circle (1);
-    \draw[fill=white] (O) circle (0.75) node[below,yshift=-1.125cm] {Signpost Cross Section};
-    \draw[dim] (O) ++(-0.75,0) -- ++(1.5,0) node[midway,above] {$d_i$};
-    \draw[dim] (O) ++(-1,1.25) -- ++(2,0) node[midway,above] {$d_o$}; 
-    \foreach \x in {-1,1} {
-      \draw (O) ++(\x,0.25) -- ++(0,1.25);
-    }
-  \end{tikzpicture}%
-  \begin{tikzpicture}[dimetric2]
-        \coordinate (O) at (0,0,0);
-        \draw[axis] (O) -- ++(6,0,0) node[right] {$x$};
-        \draw[axis] (O) -- ++(0,6,0) node[above right] {$y$};
-        \draw[axis] (O) -- ++(0,0,6) node[above] {$z$};
-        \draw[fill=gray!50] (0,0,-0.5) circle (0.5); 
-        \fill[fill=gray!50] (-0.46,-0.2,-0.5) -- (0.46,0.2,-0.5) -- (0.46,0.2,0) -- (-0.46,-0.2,0) -- cycle;
-        \draw[fill=gray!20] (O) circle (0.5);
-    \draw (0.46,0.2,-0.5) -- ++(0,0,0.5) node[below right,pos=0.0] {Fixed Support};
-    \draw (-0.46,-0.2,-0.5) -- ++(0,0,0.5);
-    \draw[fill=gray!10] (O) circle (0.2);
-    \fill[fill=gray!10] (-0.175,-0.1,0) -- (0.175,0.1,0) -- ++(0,0,4) -- (-0.175,-0.1,4) -- cycle;
-    \draw (-0.175,-0.1,0) -- ++(0,0,4);
-    \draw (0.175,0.1,0) -- ++(0,0,4) node[right,midway] {Steel Post};
-    \draw (4,0,3.95) -- ++(0,0,-1);
-    \foreach \z in {0.5,0.75,...,5} {
-      \draw[-latex] (-2*\z/5-0.2,0,\z) -- (-0.2,0,\z);
-    }
-    \draw[load] (0,0,4) -- ++(0,0,-1.25) node[right,xshift=0.1cm] {$F_{z1}$};
-    \draw[fill=gray!20] (-0.25,-0.25,5) -- (4,-0.25,5) -- (4,+0.25,5) -- (-0.25,+0.25,5) -- cycle; 
-    \draw[fill=gray!50] (+4.00,-0.25,4) -- (4,+0.25,4) -- (4,+0.25,5) -- (+4.00,-0.25,5) -- cycle; 
-    \draw[fill=gray!10] (-0.25,-0.25,4) -- (4,-0.25,4) -- (4,-0.25,5) -- (-0.25,-0.25,5) -- cycle; 
-    \draw (4.05,0,4) -- ++(1,0,0);
-    \draw (4.05,0,5) -- ++(1,0,0);
-    \draw[dim] (4.5,0,0) -- ++(0,0,4) node[midway,right] {$h_1$};
-    \draw[dim] (4.5,0,4) -- ++(0,0,1) node[midway,right] {$h_2$};
-    \draw[dim] (0,0,3.4) -- ++(4,0,0) node[midway,below] {$b_2$};
-    \coordinate (P) at (2,-0.25,4.5);
-    \draw (P) -- ++(0,0,0.25);
-    \draw (P) -- ++(0.25,0,0);
-    \draw[dim] (2.125,-0.25,4.5) -- ++(0,0,-0.5) node[midway,right] {$z_1$};
-    \draw[dim] (2,-0.25,4.625) -- ++(-2,0,0) node[midway,below] {$x_1$};
-    \draw[load] (2,-2.45,4.5) -- ++(0,2.2,0) node[pos=0.0,right,xshift=0.08cm] {$F_{y1}$};
-    \draw[axis,dashed,-] (O) -- (0,0,5);
-    \draw (0,0,5.5) -- ++(4,0,0) node[midway,above] {$w_{z}$};
-    \foreach \x in {0,0.25,...,4} {
-      \draw[-latex] (\x,0,5.5) -- ++(0,0,-0.5);
-    }
-    \draw (-0.2,0,0) -- ++(-2,0,5) node[above,xshift=0.5cm] {$w_{x}=\frac{z}{h_1+h_2} w_0$};
-  \end{tikzpicture} 
-  \caption [Cargas aplicadas sobre un poste.]{Cargas aplicadas sobre un poste.\\ {\scriptsize (Fuente: \url{www.texample.net})}}
-\end{figure}
-
-
 

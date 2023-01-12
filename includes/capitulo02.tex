@@ -17,27 +17,39 @@ Este documento ocupa estas normas. Revisar la bibliografía que se adjunta para 
 
 \item[Numeración de Títulos.] El texto del informe final debe ser subdivido en: capítulos y sub-capítulos. La numeración de capítulos estará basada en esquema con división de puntos para los sub-capítulos, es decir: Capítulo 1, Sub-capítulo 1.1, etc.
 \item[Numeración de Páginas.] Todas las páginas (con excepción de la portada) deben estar numeradas. El preámbulo (Índices, Resumen, Abstract, etc.) debe llevar numeración distinta del desarrollo (capítulos) del documento.
-\item[Numeración de Formulas, Tablas y Figuras.] Las fórmulas, figuras y tablas correspondientes a un mismo capítulo, se identificarán mediante dos números. El primero corresponde al capítulo pertinente y el segundo al número de orden correlativo.
+\item[Numeración de Formulas] Las fórmulas, figuras y tablas correspondientes a un mismo capítulo, se identificarán mediante dos números. El primero corresponde al capítulo pertinente y el segundo al número de orden correlativo.
+    
+    Los números con que se identifican las fórmulas se colocarán al extremo derecho de las mismas y entre paréntesis. Ejemplos (\autoref{eq:eq_example}, \autoref{eq:align_example}):
+    \begin{equation}
+    f(x) = x^2-2x+1
+    \label{eq:eq_example}
+    \end{equation}
+
+    \begin{align}
+    S(\omega) 
+    &= \frac{\alpha g^2}{\omega^5} e^{[ -0.74\bigl\{\frac{\omega U_\omega 19.5}{g}\bigr\}^{\!-4}\,]} \\
+    \label{eq:align_example}
+    &= \frac{\alpha g^2}{\omega^5} \exp\Bigl[ -0.74\Bigl\{\frac{\omega U_\omega 19.5}{g}\Bigr\}^{\!-4}\,\Bigr] 
+    \end{align}
+
+\item[Numeración de Figuras.] Las figuras (gráficos) correspondientes a un mismo capítulo, se identificarán mediante dos números. El primero corresponde al capítulo pertinente y el segundo al número de orden correlativo.
 
 
-Los números con que se identifican las fórmulas se colocarán al extremo derecho de las mismas y entre paréntesis. Ejemplo (\autoref{eq:eq_example}):
-\begin{equation}
-f(x) = x^2-2x+1
-\label{eq:eq_example}
-\end{equation}
+Las ilustraciones (gráficos, láminas, fotografías, etc.) en lo posible deben quedar ubicadas dentro de la página que se les referencia.
 
-Las ilustraciones (gráficos, láminas, fotografías, etc.) en lo posible deben quedar ubicadas dentro de la página que se les referencia. Los números correspondientes a figuras se colocarán en la parte inferior de las mismas, seguidos de título o breve explicación de la figura. Ver \autoref{fig:figure_example}.
+Los números correspondientes a figuras se colocarán en la parte inferior de las mismas, seguidos de título o breve explicación de la figura. Ver \autoref{fig:figure_example}.
 	\begin{figure}[ht!]
 	\centering
 	%\rule{4cm}{3cm}
-	\includegraphics[width=.3\textwidth]{figures/logoind.png}
+	\includegraphics[width=.25\textwidth]{figures/escudo-utfsm.png}
 	
-	\caption[Logotipo del Departamento de Industrias, UTFSM.]{Logotipo del Departamento de Industrias, UTFSM.\\
-	{\footnotesize (Fuente: Departamento de Industrias, 2016.)}}
+	\caption[Escudo oficial de la UTFSM.]{Escudo oficial de la UTFSM.\\
+    {\footnotesize (Fuente: UTFSM, 2023.)}}
 	
 	\label{fig:figure_example}
 	\end{figure}
 
+\item[Numeración de Tablas] Las tablas correspondientes a un mismo capítulo, se identificarán mediante dos números. El primero corresponde al capítulo pertinente y el segundo al número de orden correlativo.
 Los números asignados a las tablas se colocarán en la parte superior de ellas, seguidos de los títulos correspondientes. Ver \autoref{tbl:table_example}
 
 \begin{table}[ht]
@@ -57,130 +69,76 @@ Los números asignados a las tablas se colocarán en la parte superior de ellas,
     \label{tbl:table_example}
 \end{table}
 
-\end{description}
+En caso de tener tablas muy grandes, o si necesita una tabla rotada, puedes ocupar \inlinecode{sidewaystable} (Ejemplo: \autoref{tbl:example-sidewaystable}).
 
-\section{Otros Formatos UTFSM [OBSOLETO]}
-
-Todo archivo para titulación actualmente se maneja exclusivamente en formato digital.
-
-Las siguientes secciones se mantienen sólo para fines de legado y registro histórico.
-
-\subsection{Formato de las Cubiertas (Empaste)}
-
-A partir del año 2016, ya no es necesaria la entrega de una copia física de la memoria o tesis, siendo esto opcional. Si decide imprimirla, estás son las normas para el empaste.
-
-La cubierta o tapa será de empaste duro, cubierta de vinilo o similar de color NEGRO con letras doradas, según se muestran en \autoref{fig:thesis_cover} y \autoref{fig:thesis_cover_lateral}.
-
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=.7\textwidth]{figures/thesis_cover.png}
-\caption{Cubierta (Empaste) Memorias y Tesis UTFSM.}
-\label{fig:thesis_cover}
-\end{figure}
-
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=.7\textwidth]{figures/thesis_cover_lateral.png}
-\caption{Lomo del Empaste para Memorias y Tesis UTFSM.}
-\label{fig:thesis_cover_lateral}
-\end{figure}
-
-\subsection{Formato del Disco Compacto}
-
-El CD/DVD debe tener una carátula de identificación circular con fondo blanco, conteniendo las siguientes leyendas:
-
-\begin{itemize}
-		\item
-    Centrado en la parte superior: UTFSM, con letras mayúsculas en negrita tamaño 12. A renglón seguido el nombre de la Unidad Académica con letras mayúsculas en negrita tamaño 10.
-		\item
-    Centrado en la parte inferior el nombre completo del alumno con letras mayúsculas en negrita tamaño 10.
-		\item
-    Tres espacios más abajo y centrado, “TÍTULO DE LA MEMORIA”, con letras mayúsculas en negrita tamaño 10.
-		\item
-    Dos espacios más abajo y centrado MES –AÑO, con letras mayúsculas en negrita tamaño 10.
-    En el lado izquierdo y centrado, el escudo en colores de la Institución.
-		\item
-    En el lado derecho y centrado, NOMBRE DE LA UNIDAD ACADÉMICA y la ubicación CIUDAD – PAIS, con letras mayúsculas en negrita tamaño 8.
-\end{itemize}
-
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=.4\textwidth]{figures/thesis_cd.png}
-\caption{Disco Compacto para Memoria UTFSM}
-\label{fig:thesis_cd}
-\end{figure}
-
-
-Los CD se guardarán, en la biblioteca, en una caja de acrílico que tendrá una carátula de identificación dividida en tres franjas iguales, con las siguientes leyendas:
-\begin{itemize}
-		\item
-    El escudo a color de la Institución de 20 mm de alto, centrado en la franja superior.
-		\item
-    El nombre completo del alumno, y centrado dos espacios más abajo el título de la memoria, en la franja del medio
-		\item
-    El nombre de la Unidad Académica, y renglón más abajo, año. En la franja inferior.
-\end{itemize}
-
-
-\begin{figure}[ht!]
+\begin{sidewaystable}
     \centering
-    \includegraphics[width=.4\textwidth]{figures/thesis_cd_cover.png}
-    \caption{Cubierta de Disco Compacto para Memorias y Tesis UTFSM.}
-    \label{fig:thesis_cd_cover}
-\end{figure}
+    \caption[Ejemplo: Rotación de Tablas]{Rotación de Tablas}
+    \label{tbl:example-sidewaystable}
+    \begin{tabularx}{\columnwidth}{@{}XX@{}}
+        \toprule
+        \textbf{Column 1} & \textbf{Column 2}\\
+        \hline
+        \hline
+        Second First & Second Second\\
+        \blindtext & \blindtext\\
+        \bottomrule
+    \end{tabularx}
+\end{sidewaystable}
 
-
-La carpeta \inlinecode{figures} incluye los diagramas (formato LibreOffice) para modificación e impresión.
+\end{description}
 
 %%%%%
 \section{Documentos que se incluyen}
 
-Se incluyen (en la carpeta \inlinecode{figures}) logotipos oficiales\footnote{Éstas son imágenes registradas y propiedad intelectual de la UTFSM y del Departamento de Industrias, y no están incluidas en la licencia de esta plantilla. La imagen corporativa de la UTFSM y del Departamento de Industrias están protegidas por leyes chilenas e internacionales de Derechos de autor. Su uso sólo está autorizado a estudiantes y memoristas de la UTFSM para fines de preparación de documentos académicos, incluidas memorias y tesis.}
+Se incluyen (en la carpeta \inlinecode{figures}) logotipos oficiales\footnote{Éstas son imágenes registradas y propiedad intelectual de la UTFSM y del Departamento de Industrias, y no están incluidas en la licencia de esta plantilla. La imagen corporativa de la UTFSM y del Departamento de Industrias están protegidas por leyes chilenas e internacionales de derechos de autor. Su uso sólo está autorizado a estudiantes y memoristas de la UTFSM para fines de preparación de documentos académicos, incluidas memorias y tesis.}
 de la UTFSM y del Departamento de Industrias.
 
-\begin{figure}[ht!]
-\centering
-\includegraphics[scale = .5]{figures/escudo-utfsm.png}
-\caption{Escudo de la UTFSM}
-\label{fig:escudo}
-\end{figure}
-
-\begin{figure}[ht!]
-\centering
-\includegraphics[scale = .45]{figures/logousmleyenda.png}
-\caption{Logotipo de la UTFSM (con leyenda)}
-\label{fig:logousm_leyenda}
-\end{figure}
-
-
-\begin{figure}[ht!]
-\centering
-\includegraphics[width = .85\textwidth]{figures/logousm-lateral.png}
-\caption{Logotipo de la UTFSM (con leyenda lateral)}
-\label{fig:logousm_leyenda_lateral}
-\end{figure}
-
-
-\begin{figure}[ht!]
-\centering
-\includegraphics[scale = .95]{figures/logousmind.jpg}
-\caption{Logotipo de la UTFSM - Departamento de Industrias}
-\label{fig:logousm_industrias}
-\end{figure}
-
-\begin{figure}[ht!]
-    \centering
-    %\rule{4cm}{3cm}
-    \includegraphics[width=.8\textwidth]{figures/logo_utfsm_di.png}
-    \caption{Logotipo del Departamento de Industrias, UTFSM (Formato lateral).}
-    \label{fig:logousm_industrias_lateral}
-\end{figure}
-
-\begin{figure}[ht!]
-\centering
-%\rule{4cm}{3cm}
-\includegraphics[width=.3\textwidth]{figures/logoind.png}
-\caption{Logotipo del Departamento de Industrias, UTFSM }
-\label{fig:logoindustrias}
-\end{figure}
-
+    \begin{figure}[ht!]
+        \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width = .7\textwidth]{figures/escudo-utfsm.png}
+        \caption{Escudo de la UTFSM}
+        \label{fig:escudo}
+        \end{subfigure}%
+        \hfill
+        \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width = .6\textwidth]{figures/logoind.png}
+        \caption{Logotipo del Departamento de Industrias, UTFSM }
+        \label{fig:logoindustrias}
+        \end{subfigure}%
+        \\
+        \bigskip
+        \\
+        \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width = .9\textwidth]{figures/logousmleyenda}
+        \caption{Logotipo de la UTFSM (con leyenda)}
+        \label{fig:logousm_leyenda}
+        \end{subfigure}%
+        \hfill
+        \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width = .8\textwidth]{figures/logousmind.jpg}
+        \caption{Logotipo de la UTFSM - Departamento de Industrias}
+        \label{fig:logousm_industrias}
+        \end{subfigure}%
+        \\
+        \bigskip
+        \\
+        \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width = .9\textwidth]{figures/logousm-lateral}
+        \caption{Logotipo de la UTFSM (con leyenda lateral)}
+        \label{fig:logousm_leyenda_lateral}
+        \end{subfigure}%
+        \hfill
+        \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=.9\textwidth]{figures/logo_utfsm_di.png}
+        \caption{Logotipo del Departamento de Industrias, UTFSM (Formato lateral).}
+        \label{fig:logousm_industrias_lateral}
+        \end{subfigure}%
+        \caption {Archivos (imágenes) Incluidos}
+    \end{figure}

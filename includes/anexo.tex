@@ -4,3 +4,93 @@
 {\footnotesize
 \verbatiminput{LICENSE} 
 }
+
+\chapter{Código fuente de figuras y tablas}
+\label{annex:code}
+
+\section{Tablas}
+
+\subsection{Tabla Normal}
+
+\begin{Verbatim}[frame=lines, label=\autoref{tbl:temperaturas} Ejemplo Tabla
+				, fontsize=\footnotesize, numbers=left
+				, baselinestretch=1
+				, formatcom=\color{gray}]
+\begin{table}[ht]
+    \caption[Ejemplo: Tabla de Temperaturas]{Tabla de Temperaturas}
+    \label{tbl:annex-table}
+    \begin{tabularx}{\linewidth}{@{} l  c  c  X @{}}
+        \toprule
+        \textbf{\textsc{Day}} &  \textbf{\textsc{Min Temp}} 
+        		& \textbf{\textsc{Max Temp}} & \textbf{\textsc{Summary}}\\
+    	  \hline\hline
+        Monday & 11C & 22C & A clear day with lots of sunshine.
+        However, the strong breeze will bring down the temperatures. \\ \hline
+        Tuesday & 9C & 19C & Cloudy with rain, across many northern regions. Clear spells
+        across most of Scotland and Northern Ireland,
+        but rain reaching the far northwest. \\ \hline
+        Wednesday & 10C & 21C & Rain will still linger for the morning.
+        Conditions will improve by early afternoon and continue
+        throughout the evening. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+\end{Verbatim}
+
+\subsection{Tabla Rotada}
+
+\begin{Verbatim}[frame=lines, label=\autoref{tbl:example-sidewaystable} Ejemplo Tabla Rotada
+, fontsize=\footnotesize, numbers=left
+, baselinestretch=1
+, formatcom=\color{gray}]
+\begin{sidewaystable}
+    \centering
+    \caption[Ejemplo: Rotación de Tablas]{Rotación de Tablas}
+    \label{tbl:annex-table-rotated}
+    \begin{tabularx}{\columnwidth}{@{}XX@{}}
+        \toprule
+        \textbf{Column 1} & \textbf{Column 2}\\
+        \hline
+        \hline
+        Second First & Second Second\\
+        \blindtext & \blindtext\\
+        \bottomrule
+    \end{tabularx}
+\end{sidewaystable}
+\end{Verbatim}
+
+
+\subsection{Imágenes}
+
+\begin{Verbatim}[frame=lines, label=Incorporar \autoref{fig:logoind}
+				, fontsize=\footnotesize, numbers=left
+				, baselinestretch=1
+				, formatcom=\color{gray}]
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=.3\textwidth]{figures/logoind.png}
+\caption[Logotipo Departamento de Industrias]{Logotipo Departamento de Industrias\\
+{\scriptsize (Fuente: Departamento de Industrias)}}
+\label{fig:annex-logoind}
+\end{figure}
+\end{Verbatim}
+
+\subsection{Imágenes Flotantes}
+\begin{Verbatim}[frame=lines, label=\autoref{fig:emblem-float}
+				, fontsize=\footnotesize, numbers=left
+				, baselinestretch=1
+				, formatcom=\color{gray}]
+\begin{wrapfigure}{o}{.4\textwidth}
+    \vspace{-20pt}
+    \begin{spacing}{1}
+        \begin{center}
+            \includegraphics[width=.35\columnwidth]{figures/escudo-utfsm.png}
+            \vspace{-10pt}
+            \caption{Escudo UTFSM (Flotante)}
+            \label{fig:annex-emblem-float}
+        \end{center}
+    \end{spacing}
+    \vspace{-10pt}
+\end{wrapfigure}
+\end{Verbatim}
+
